@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Remarks</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content  style="border-radius: 10px;border: 2px solid #eb0802">
+    <ion-title style="width: 100%;background-color: #eb0802;border-top-left-radius: 8px;border-top-right-radius: 8px">Add Remarks</ion-title>
+    <textarea align="center" rows="5" [(ngModel)]="remarks" ></textarea>
+
+    <div *ngIf="desi =='3'">
+        <ion-row style="height:auto;padding:1px; margin-left: 16px;margin-right: 8px; border: 1px solid #0091DF;">
+            <ion-col col-7 style="color: #0091DF;font-size: 15px">
+                1. Verified the details given in the oppointment application.
+            </ion-col>
+            <ion-col align="right" style="text-align: right" col-5>
+            <p style="padding: 4px" style="text-align: right;font-size: 15px"> <input type="radio" name="application" value="Yes" [(ngModel)]="application"> Yes <input type="radio" name="application" value="No" [(ngModel)]="application"> No</p>
+            </ion-col>
+          </ion-row>
+          <ion-row style="height:auto;padding:1px; margin-left: 16px;margin-right: 8px; border: 1px solid #0091DF;">
+              <ion-col col-7 style="color: #0091DF;font-size: 15px">
+                2. Verified the physical location of dealer shop.
+              </ion-col>
+              <ion-col align="right" style="text-align: right" col-5>
+              <p style="padding: 4px" style="text-align: right;font-size: 15px"> <input type="radio" name="physicalLoc" value="Yes" [(ngModel)]="physicalLoc"> Yes <input type="radio" name="physicalLoc" value="No" [(ngModel)]="physicalLoc"> No</p>
+              </ion-col>
+            </ion-row>
+            <ion-row style="height:auto;padding:1px; margin-left: 16px;margin-right: 8px; border: 1px solid #0091DF;">
+                <ion-col col-7 style="color: #0091DF;font-size: 15px">
+                3. Attached snapshot of the shop (along with shop board).
+                </ion-col>
+                <ion-col align="right" style="text-align: right" col-5>
+                <p style="padding: 4px" style="text-align: right;font-size: 15px"> <input type="radio" name="shopboard" value="Yes" [(ngModel)]="shopboard"> Yes <input type="radio" name="shopboard" value="No" [(ngModel)]="shopboard"> No</p>
+                </ion-col>
+              </ion-row>
+              <ion-item   class="trns">
+                  <ion-label style="font-size:15px" color="primary" stacked>Deviation </ion-label>
+                  <ion-input  style=" border: 1px solid #0091DF;padding-left: 4px; color: black"  name="Deviation" [(ngModel)]="Deviation"></ion-input>
+                </ion-item>
+    </div>
+    <!-- style="bottom: 0px;right: 0px; position: absolute;" -->
+<ion-row >
+ 
+  <ion-col col-6 text-center> <button  color="btnn" ion-button (click)="dismiss()"  round>Cancel</button></ion-col>
+  <ion-col col-6 text-center> <button color="btnn"  ion-button  (click)="submit()"   round>Submit</button></ion-col>
+ 
+ 
+</ion-row>
+  <!-- style="bottom: 0px;left: 0px;  position: absolute;"  -->
+</ion-content>

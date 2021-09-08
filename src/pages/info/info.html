@@ -1,0 +1,129 @@
+<!--
+  Generated template for the InfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><ion-icon name="ios-information-circle-outline" isActive="true" >  Information</ion-icon></ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="dismiss()">
+            <ion-icon name="md-close-circle"></ion-icon>
+          </button>
+        </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div padding>
+        <ion-segment [(ngModel)]="Info">
+          <ion-segment-button value="condi_of_use">
+              CONDITIONS OF USE
+          </ion-segment-button>
+          <ion-segment-button value="priv_stat">
+              PRIVACY STATEMENT
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+          <div *ngIf="Info=='condi_of_use'; else elseBlock ">
+                <p>Access to and use of this app are subject to the following conditions. Please do not use this app unless you agree with these conditions. This app has been developed by the <b>Crop Science Division</b> , at <b>Bayer Pakistan (Private) Limited</b> (hereinafter to be referred to as BAYER) and is administrated by the same. We reserve the right to discontinue or to make partial or complete modifications to this app or to the Conditions of Use and to our General Terms and Conditions. Please note that we may make such changes at our own discretion and without prior announcement. We must therefore ask you, next time you visit this app, to view the conditions again and to note any changes or amendments that may have been made.
+                  <br>
+                  <br>
+                  <b>Surrender of use and benefit</b>
+                  <br>
+                  All details, documents and illustrations published in this app are the sole property of BAYER. Any permission to use the same is granted on the proviso that the relevant trademark/copyright note is displayed on all copies, that such details are only used for personal purposes, that they are not exploited commercially, that the details are not modified in any way and that all illustrations gained from the app are only used in conjunction with the accompanying text.
+                  <br>
+                  <br>
+                  <b>Trademarks and Copyright</b>
+                  <br>
+                  All trademarks in this app are the property of BAYER, unless otherwise noted or in any other way perceivable as third party rights. Any unauthorized use of these trademarks or other materials is expressly prohibited and constitutes a violation of copyright, trademark law or other industrial property rights.
+                  <br>
+                  <br>
+                  <b>Limited liability</b>
+                  <br>
+                  BAYER has compiled the detailed information provided in this app from internal and external sources to the best of its knowledge and belief, using professional diligence. We endeavor to expand and update this range of information on an ongoing basis. The information in this app is purely for the purpose of presenting BAYER and its products and services. However, no representation is made or warranty given, either expressly or tacitly, for the completeness or correctness of the information in this app. Please be aware that this information although accurate on the day it was published may no longer be up to date. We therefore recommend that you check any information you obtain from this app prior to using it in whatever form. Should you require any advice or instructions concerning our products or services, please contact us directly. Users of this app declare that they agree to access the app and its content at their own risk. Neither BAYER nor third parties involved in the writing, production or transmission of this app can be held liable for damage or injury resulting from access or the impossibility of access or from the use or impossibility of use of this app or from the fact that you have relied on information given in this app.
+                  <br>
+                  <br>
+                  <b>Websites of third-party vendors/links</b>
+                  <br>
+                  This app may contain links/references to third-party websites. By providing such links, BAYER does not give its approval to their contents. Neither does BAYER accept any responsibility for the availability or the contents of such websites or any liability for damage or injury resulting from the use of such contents, of whatever form. BAYER offers no guarantee that pages linked to provide information of consistent quality. Links to websites are provided to users of this app merely for the sake of convenience. Users access such websites at their own risk. The choice of links should in no way restrict users to the linked pages.
+                  <br>
+                  <br>
+                  <b>Details supplied by yourself</b>
+                  <br>
+                  The user of this app is fully responsible for the content and correctness of details he or she sends to BAYER as well as for the non-violation of any third-party rights that may be involved in such details. The user gives his or her consent for BAYER to store such details and to use the same for the purpose of statistical analysis or for any other specified business purpose, unless the information involves personal details, going beyond master data or usage data. In particular, BAYER is entitled to use the contents of such messages, including ideas, inventions, blueprints, techniques and expertise contained therein, for any purpose, such as the development, production and/or marketing of products or services and to reproduce such information and make it available to third parties without any limitations.
+                  <br>
+                  <br>
+                  <b>Applicable law</b>
+                  <br>
+                  Any legal claims or lawsuits in conjunction with this app or its use are subject to the interpretation of the laws of the Islamic Republic of Pakistan, except for the provisions of international private law and the Hague Convention relating to the Uniform Law on the International Sale of Goods of July 1, 1964 and in the UN Sales Convention of April 11, 1980.
+                </p>
+              </div>
+      
+          <ng-template #elseBlock >
+                <p>
+                  Bayer is aware that the security of your private information is an important concern when you use our apps. We take the protection of your personal data very seriously. Therefore we would like you to know what data we maintain and what data we discard. With this privacy statement, we would like to inform you about our security measures.
+                  <br>
+                  <br>
+                  <b>Collection of data</b>
+                  <br>
+                  When you install this app, data may be stored for various security purposes. This data may include the name of your internet service provider and your IP-Address. This data could possibly lead to your identification, but we do not use it to do so. We do use the data from time to time for statistical purposes, but maintain the anonymity of each individual user so that the person cannot be identified. In cases when personal data is provided to others to provide you products or services you have requested, or for other purposes you have authorized, we rely on technical and organizational means to assure that applicable data security regulations are followed.
+                  <br>
+                  <br>
+                  <b>Collection and processing of personal data</b>
+                  <br>
+                  We collect personal data only when you provide it to us through registration, completion of forms or e-mails, or as part of an order for products or services, inquiries or requests for materials being ordered and similar situations in which you have chosen to provide the information to us.
+                  <br>
+                  <br>
+                  The database and its contents remain with our company and stay with data processors or servers acting on our behalf and responsible to us. Your personal data will not be passed on by us or our agents for use by third parties in any form whatsoever, unless we have obtained your consent or are legally required to do so.
+                  <br><br>
+                  We will retain control of and responsibility for the use of any personal data you disclose to us. Some of this data may be stored or processed at computers located in other jurisdictions, such as the United States, whose data protection laws may differ from the jurisdiction in which you live. In such cases, we will ensure that appropriate protections are in place to require the data processor in that country to maintain protections on the data that are equivalent to those that apply in the country in which you live.
+                  <br>
+                  <br>
+                  <b>Purposes of use</b>
+                  <br>
+                  The data we collect will only be used for the purpose of supplying you with the requested products or services or for other purposes for which you have given your consent, except where otherwise provided by law.
+                  <br>
+                  <br>
+                  <b>Right of access and correction</b>
+                  <br>
+                  You have the right to review and amend any personal data stored in our system if you believe it may be out of date or incorrect. Just send an e-mail to the address given in the imprint or contact the Data Privacy Officer at the address below.
+                  <br>
+                  <br>
+                  <b>Right of cancellation</b>
+                  <br>
+                  You have the right at any time to withdraw your consent to the use of your personal data in the future. Again, just send an e-mail to the address given in the imprint or contact the Data Privacy Officer at the address below.
+                  <br>
+                  <br>
+                  <b>Data retention</b>
+                  <br>
+                  We only retain personal data for as long as is necessary for us to render a service you have requested or to which you have given your consent, except where otherwise provided by law (e.g. in connection with pending litigation).
+                  <br>
+                  <br>
+                  <b>Security</b>
+                  <br>
+                  Bayer uses technical and organizational security precautions to protect your data from manipulation, loss, destruction or access by unauthorized persons. Any personal data that is provided to Bayer by you will be encrypted in transit to prevent its possible misuse by third parties. Our security procedures are continuously revised based on new technological developments.
+                  
+                  <br><br><br>
+                  <b>Contacts</b>
+                  <br>
+                  If you have any problems, questions or ideas, please contact the following person:
+                  <br>
+                  <br>
+                  <br>  
+                  <b>Data Privacy Officer</b>
+                  Faiqa Mariam Zaman
+                  Bayer Pakistan (Private) Limited
+                  E-Mail: <b>faiqamariam.zaman@bayer.com</b>
+                  <br>
+                  <br>
+                  The constant development of the internet requires occasional adjustments to our privacy statement. We retain the right to make changes when necessary.
+                </p>
+              </ng-template>
+            </ion-content>
+            

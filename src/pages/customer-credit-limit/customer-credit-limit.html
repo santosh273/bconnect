@@ -1,0 +1,96 @@
+<!--
+  Generated template for the CustomerCreditLimitPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>CustomerCreditLimit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg" padding>
+    <ion-title>Customer </ion-title>
+  <ion-item no-lines style=" border: 2px solid #c06963;padding-left: 4px;color: #0091DF " class="trns">
+    <ion-label style="color: #0091DF" >Customer</ion-label>
+    <select-searchable
+    item-content
+    [(ngModel)]="selectedCustomer"
+    [items]="customers"
+    itemValueField="Idx"
+    itemTextField="CustomerName"
+    [canSearch]="true"
+    (onChange)="portChange($event)">
+</select-searchable>
+</ion-item>
+<br><br>
+<ion-title>Application Details</ion-title>
+<div >
+<ion-item class="trns">
+  <ion-label color="border" stacked>Account No. :</ion-label>
+  <ion-input   style=" border: 2px solid #0091DF;padding-left: 4px; color: black"   type="text"  [(ngModel)]="CustomerName" ></ion-input>
+</ion-item>
+<ion-item class="trns">
+  <ion-label color="border" stacked>Dealership Name:</ion-label>
+  <ion-input   style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  disabled="true" type="text"  [(ngModel)]="customerNo" ></ion-input>
+</ion-item>
+<ion-item class="trns">
+  <ion-label color="border" stacked>Region:</ion-label>
+  <ion-input   style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  disabled="true" type="text"  [(ngModel)]="region" ></ion-input>
+</ion-item>
+<ion-item class="trns">
+  <ion-label color="border" stacked>Territory: </ion-label>
+  <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  disabled="true" type="text"  [(ngModel)]="tertory" ></ion-input>
+</ion-item>
+<ion-item class="trns">
+  <ion-label color="border" stacked>Number of Year in Market: </ion-label>
+  <ion-input   style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  disabled="true" type="text"  [(ngModel)]="NoOfYearsInMarket" ></ion-input>
+</ion-item>
+<ion-item class="trns">
+    <ion-label color="border" stacked>Number of Year with Bayers: </ion-label>
+    <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  disabled="true" type="text"  [(ngModel)]="NoOfYearsWithBayer" ></ion-input>
+</ion-item>
+<ion-item class="trns">
+    <ion-label color="border" stacked>Litigation History: </ion-label>
+    <ion-input   style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  disabled="true" type="text"  [(ngModel)]="LitigationHistory" ></ion-input>
+  </ion-item>
+</div>
+  <br><br>
+  <ion-title>Historical Information</ion-title>
+
+  <ion-grid>
+    <ion-row class="rowheader"><ion-col col-4>Years </ion-col><ion-col col-2>  2019</ion-col><ion-col col-2>  2018</ion-col><ion-col col-2>  2017</ion-col><ion-col col-2>  2015</ion-col></ion-row>
+    <ion-row><ion-col col-4>CPBP/MOU           </ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col></ion-row> 
+    <ion-row><ion-col col-4>Credit Limit       </ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col></ion-row>
+    <ion-row><ion-col col-4>Credit Limit Growth</ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col></ion-row>
+    <ion-row><ion-col col-4>Credit Sales       </ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col></ion-row>
+    <ion-row><ion-col col-4>Rotation History   </ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col></ion-row>
+    <ion-row><ion-col col-4>Target Achievement </ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col></ion-row>
+    <ion-row><ion-col col-4>Total Net Sales    </ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col><ion-col col-2>-</ion-col><ion-col col-2> -</ion-col></ion-row>
+  </ion-grid>
+
+  <br><br>
+  <ion-title>Proposed Credit Terms</ion-title>
+
+  <ion-grid>
+    <ion-row class="rowheader"><ion-col col-3>Term Risk Category </ion-col><ion-col col-3>Term Limit</ion-col><ion-col col-2>50% of LY Sales</ion-col><ion-col col-2> 40% of CPBP</ion-col><ion-col col-2>Max Limit Recommended</ion-col></ion-row>
+    <ion-row><ion-col col-3><input [(ngModel)]="termRC" type="text"></ion-col><ion-col col-3><input [(ngModel)]="termLimit" type="text"></ion-col><ion-col col-2>  --</ion-col><ion-col col-2>  --</ion-col><ion-col col-2>  --</ion-col></ion-row> 
+  </ion-grid>
+  <br><br>
+ 
+  <ion-title>Short Term History +<br> Proposed Credit Limit & Justification</ion-title>
+  <ion-grid>
+    <ion-row class="rowheader"><ion-col col-4>Particulars</ion-col><ion-col col-2>  ASO CY</ion-col><ion-col col-2>  RM CY</ion-col><ion-col col-2>  ASO LY</ion-col><ion-col col-2>  RM LY</ion-col></ion-row>
+    <ion-row><ion-col col-4>Marketing Information</ion-col><ion-col col-2><input  [(ngModel)]="asoCY"  type="text"></ion-col><ion-col col-2><input  [(ngModel)]="rmCY" type="text"></ion-col><ion-col col-2>  -</ion-col><ion-col col-2>  -</ion-col></ion-row> 
+    <ion-row><ion-col col-4>Rating based on past experience</ion-col><ion-col col-2><input  [(ngModel)]="asoCY" type="text"></ion-col><ion-col col-2><input  [(ngModel)]="rmCY" type="text"></ion-col><ion-col col-2>  -</ion-col><ion-col col-2>  -</ion-col></ion-row>
+    <ion-row><ion-col col-4>Requested Limit in PKR (CY only)</ion-col><ion-col col-2><input  [(ngModel)]="asoCY"  type="text"></ion-col><ion-col col-2><input  [(ngModel)]="rmCY" type="text"></ion-col><ion-col col-2>  -</ion-col><ion-col col-2> -</ion-col></ion-row>  
+   
+  </ion-grid>
+    <br><br>
+  <button align="center" style="font-size: 2.0em" (click)="creditLimitInsert()" block ion-button color="secondary" icon-end>Submit <ion-icon name="ios-paper-plane"></ion-icon></button>
+</ion-content>
+<!-- npm install ionic-selectable save -->

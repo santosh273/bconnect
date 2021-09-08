@@ -1,0 +1,11 @@
+page-contact-us {
+    .vertical-align-content > *
+    {
+         display: flex!important;
+         align-content: center!important;
+         align-items: center!important;
+    }
+    .col{
+        padding: 0px
+    }
+}

@@ -1,0 +1,32 @@
+page-sign-in {
+    .inpt{
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 50px;
+         text-align: center;
+         padding-left: 20px;
+    }
+    .trns {
+        border-color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
+        color: white; } 
+        .text-input::-moz-placeholder {
+            color: #ffffff;
+          }
+          
+          .text-input:-ms-input-placeholder {
+            color: #ffffff;
+          }
+          
+          .text-input::-webkit-input-placeholder {
+            text-indent: 0;
+            color: #ffffff;
+          }
+          .input{
+              color: #ffffff
+          } 
+        //   .button {
+            
+        //      background: white; /* For browsers that do not support gradients */
+        //      background: linear-gradient(to left, 	#0091DF , #66B512); /* Standard syntax (must be last) */
+        //  }
+}

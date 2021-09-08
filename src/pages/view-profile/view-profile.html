@@ -1,0 +1,173 @@
+<!--
+  Generated template for the ViewProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content text-center class="bg"> 
+    <span *ngFor="let u of user">
+        <span  *ngIf="u.userTypeIdx == '4' || u.userTypeIdx == 4">
+        <img *ngIf="u.profileImage == '' " style="margin:-31px;height:120px;width:120px;border-radius: 50%;border: 2px solid #149ae2;bottom: -48px; position: relative;" src="assets/imgs/nophoto.jpg">
+        <img *ngIf="u.profileImage !== '' " style="margin:-31px;height:120px;width:120px;border-radius: 50%;border: 2px solid #149ae2;bottom: -48px; position: relative;"[src]="filesfolder+u.profileImage">
+        </span>
+    </span>
+    <div padding>
+  <ion-grid  style="border: 2px solid #149ae2; border-radius: 10px;" text-wrap *ngFor="let u of user" >
+   <div style="    margin-top: 52px;" *ngIf="u.userTypeIdx == '4' || u.userTypeIdx == 4">
+        <ion-icon (click)="refresh()" class="refresh" name="sync"></ion-icon>
+      <ion-row>
+        <ion-col><b>Registration Date:</b></ion-col>
+        <ion-col>{{u.registrationDate}}</ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col><b>Customer No:</b></ion-col>
+          <ion-col>{{u.customerNo}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col><b>Customer Name:</b></ion-col>
+            <ion-col>{{u.customerName}}</ion-col>
+        </ion-row>
+
+        <ion-row>
+           <ion-col><b>Proprietor Name:</b></ion-col>
+          <ion-col>{{u.propretiorName}}</ion-col>
+       </ion-row>
+
+            <!-- <ion-row>
+           <ion-col><b>Decision Maker:</b></ion-col>
+           <ion-col>{{u.decisionMaker}}</ion-col>
+       </ion-row>
+        <ion-row>
+              <ion-col><b>Decision Maker Contact No:</b></ion-col>
+              <ion-col>{{u.decisionMakerContactNo}}</ion-col>
+        </ion-row> -->
+        <ion-row>
+            <ion-col><b>CNIC:</b></ion-col>
+            <ion-col>{{u.cnic}}</ion-col>
+        </ion-row>
+        <hr style="color: wheat">
+         <ion-row>
+               <ion-col><b>City Name:</b></ion-col>
+               <ion-col>{{u.cityName}}</ion-col>
+         </ion-row>
+         <ion-row>
+            <ion-col><b>Mailing Address:</b></ion-col>
+            <ion-col>{{u.address}}</ion-col>
+        </ion-row>
+         <ion-row>
+               <ion-col><b>Area Name:</b></ion-col>
+               <ion-col>{{u.areaName}}</ion-col>
+         </ion-row>
+
+         <ion-row>
+            <ion-col><b>Postal Code:</b></ion-col>
+            <ion-col>{{u.postalCode}}</ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col><b>Phone No 1:</b></ion-col>
+          <ion-col>{{u.phoneNo1}}</ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col><b>Phone No 2:</b></ion-col>
+          <ion-col>{{u.phoneNo2}}</ion-col>
+      </ion-row>
+       <ion-row>
+             <ion-col><b>Phone No 3:</b></ion-col>
+             <ion-col>{{u.phoneNo3}}</ion-col>
+       </ion-row>
+       <ion-row>
+          <ion-col><b>Email:</b></ion-col>
+          <ion-col>{{u.email}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><b>Pocket Name:</b></ion-col>
+        <ion-col>{{u.pocketName}}</ion-col>
+        </ion-row>
+      <ion-row>
+            <ion-col><b>NTN:</b></ion-col>
+            <ion-col>{{u.ntn}}</ion-col>
+      </ion-row>
+    </div>
+    <div  style="    margin-top: 52px;"  *ngIf="u.userTypeIdx == '3' || u.userTypeIdx == 3">
+            <ion-row>
+              <ion-col><b>Registration Date:</b></ion-col>
+              <ion-col>{{u.registrationDate}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col><b>Employee Code:</b></ion-col>
+                <ion-col>{{u.employeeCode}}</ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col><b>Employee Name:</b></ion-col>
+                  <ion-col>{{u.firstName}} {{u.lastName}}</ion-col>
+              </ion-row>
+      
+              <ion-row>
+                  <ion-col><b>CNIC:</b></ion-col>
+                  <ion-col>{{u.cnic1}}</ion-col>
+              </ion-row>
+              <hr style="color: wheat">
+               <ion-row>
+                     <ion-col><b>City Name:</b></ion-col>
+                     <ion-col>{{u.cityName}}</ion-col>
+               </ion-row>
+               <ion-row>
+                  <ion-col><b>Address:</b></ion-col>
+                  <ion-col>{{u.address1}}</ion-col>
+              </ion-row>
+               <ion-row>
+                     <ion-col><b>Area Name:</b></ion-col>
+                     <ion-col>{{u.areaName}}</ion-col>
+               </ion-row>
+      
+               <ion-row>
+                  <ion-col><b>Postal Code:</b></ion-col>
+                  <ion-col>{{u.postalCode}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col><b>Phone No 1:</b></ion-col>
+                <ion-col>{{u.phone1}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col><b>Phone No 2:</b></ion-col>
+                <ion-col>{{u.phone2}}</ion-col>
+            </ion-row>
+             <ion-row>
+                   <ion-col><b>Phone No 3:</b></ion-col>
+                   <ion-col>{{u.phone3}}</ion-col>
+             </ion-row>
+             <ion-row>
+                <ion-col><b>Email:</b></ion-col>
+                <ion-col>{{u.email1}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col><b>Pocket Name:</b></ion-col>
+                <ion-col>{{u.pocketName}}</ion-col>
+                </ion-row>
+            <ion-row>
+                  <ion-col><b>NTN:</b></ion-col>
+                  <ion-col>{{u.ntn}}</ion-col>
+            </ion-row>
+          </div>
+    
+     
+      
+    
+  </ion-grid>
+  
+  <div  text-center *ngFor="let u of user">
+      <!-- <button *ngIf="u.userTypeIdx == '3' || u.userTypeIdx == 3" (click)="update(u.email,u.address1)" ion-button block >Update</button> -->
+      <button *ngIf="u.userTypeIdx == '4' || u.userTypeIdx == 4" (click)="update(u.email,u.address,u.phoneNo1)" ion-button block >Update</button>
+  </div>
+</div>
+
+</ion-content>

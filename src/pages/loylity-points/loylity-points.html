@@ -1,0 +1,70 @@
+<!--
+  Generated template for the LoylityPointsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Loyalty Points</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg">
+  <div text-center>
+    <p style="font-size: 16px"> Loyalty Points </p>
+  </div>
+
+
+  <ion-row style="font-size: 12px;background-color: rgb(226, 228, 133)">
+    <ion-col col-3> Type </ion-col>
+    <ion-col col-3> Points </ion-col>
+    <ion-col col-3> Points Type </ion-col>
+    <!-- <ion-col col-2  > Amount </ion-col> -->
+    <ion-col col-3> Date </ion-col>
+  </ion-row>
+
+  <ion-grid *ngFor="let p of points">
+
+    <ion-row *ngIf="p.bbbb == 1 && p.bgpcheck == 1"    style="font-size: 12px;height: auto;background-color: beige;border-radius: 5px;margin: 2px">
+      <ion-col col-3 [ngClass]="(p.pointsAdd == 'salesreturn') ? 'salesreturn' : 'salesorder'">{{p.types}}</ion-col>
+      <ion-col col-3 [ngClass]="(p.pointsAdd == 'salesreturn') ? 'salesreturn' : 'salesorder'">{{p.points}}</ion-col>
+      <ion-col col-3 [ngClass]="(p.pointsAdd == 'salesreturn') ? 'salesreturn' : 'salesorder'">{{p.pointsAdd}}</ion-col>
+      <!-- <ion-col col-2  >{{p.amount}}</ion-col> -->
+      <ion-col col-3 [ngClass]="(p.pointsAdd == 'salesreturn') ? 'salesreturn' : 'salesorder'">{{p.creationDate}}
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="p.bbbb == 0"    style="font-size: 12px;height: auto;background-color: beige;border-radius: 5px;margin: 2px">
+      <ion-col col-3 [ngClass]="(p.pointsAdd == 'salesreturn') ? 'salesreturn' : 'salesorder'">{{p.types}}</ion-col>
+      <ion-col col-3 [ngClass]="(p.pointsAdd == 'salesreturn') ? 'salesreturn' : 'salesorder'">{{p.points}}</ion-col>
+      <ion-col col-3 [ngClass]="(p.pointsAdd == 'salesreturn') ? 'salesreturn' : 'salesorder'">{{p.pointsAdd}}</ion-col>
+      <!-- <ion-col col-2  >{{p.amount}}</ion-col> -->
+      <ion-col col-3 [ngClass]="(p.pointsAdd == 'salesreturn') ? 'salesreturn' : 'salesorder'">{{p.creationDate}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div style="margin: 6px">
+    <ion-row style="border-bottom: 1px solid">
+      <ion-col style="font-size: 16px" col-6>Total Points: {{tpoints}}</ion-col>
+      <ion-col style="font-size: 16px;text-align: right;color: #3b5998" col-6>Consumed Points : {{consumed}}</ion-col>
+    </ion-row>
+  </div>
+  <div style="margin: 6px">
+    <ion-row style="border-bottom: 1px solid">
+      <ion-col style="font-size: 16px" col-6>Available Points: {{available}}</ion-col>
+      <ion-col style="font-size: 16px;text-align: right;color: #3b5998" col-6>Requested Points : {{requested}}</ion-col>
+    </ion-row>
+  </div>
+
+  <div style="margin: 6px" *ngIf="bgpcheck == 1">
+    <ion-row style="border-bottom: 1px solid">
+      <ion-col style="font-size: 16px" col-6>BGP Points: {{bgp}}</ion-col>
+
+    </ion-row>
+  </div>
+</ion-content>

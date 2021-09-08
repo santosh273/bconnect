@@ -1,0 +1,24 @@
+page-customer-credit-limit {
+
+    .item{border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 0px;}
+        .col{
+            padding: 0px;
+            border:1px solid black;
+        }
+        .rowheader{
+            background-color: #0091DF;
+            color: white
+        }
+        input{
+            width: 100%;
+            max-width: 100%;
+            touch-action: pan-up;
+            height: 100%;
+        }
+        input:focus{
+           border-color: chocolate;
+        }
+}

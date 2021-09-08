@@ -1,0 +1,88 @@
+<!--
+  Generated template for the StatusCRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Dealer Applications status</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  class="bg">
+    <!-- *ngFor="let post of Notifications; " -->
+
+      <div class="trns" style="margin-right: 10px; margin-left: 10px"   *ngFor="let request of requests; " (click)="viewDetails(request)">
+        <!-- <ion-item class="trns">   -->
+        <ion-item no-lines class="trns" *ngIf="request.waitingIn=='Pending'" style="background-color: #0091df; margin-top: 3px;border-radius: 8px">
+              <ion-row>
+            <ion-col col-9>
+              <ion-row>
+                <ion-col text-wrap col-10><font class="txt1">{{request.customerName}}</font></ion-col>
+                <!-- <ion-col col-2><img src="assets/imgs/Bayer.png"></ion-col> -->
+                <!-- <ion-col col-6><font class="txt1">Status:</font> <font style="color: rgb(202, 135, 48)">{{post.status}}</font> </ion-col> -->
+              </ion-row>
+              <ion-row>
+               
+                <ion-col col-6><font class="txt1">Pocket : {{request.pocketName}} </font></ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col  col-3 style="color: lavender;" ><ion-row> &nbsp;&nbsp;&nbsp;<ion-icon  style="font-size: 25px;padding-left: 7px" ios="ios-eye" md="md-eye"></ion-icon></ion-row>
+            <ion-row>{{request.waitingIn}}</ion-row>
+          </ion-col>
+            </ion-row>
+            </ion-item>
+
+            <ion-item no-lines class="trns" *ngIf="request.waitingIn=='Rejected'" style="background-color: #e44545; margin-top: 3px;border-radius: 8px">
+              <ion-row>
+            <ion-col col-9>
+              <ion-row>
+                <ion-col col-10><font class="txt1">{{request.customerName}}</font></ion-col>
+                <!-- <ion-col col-2><img src="assets/imgs/Bayer.png"></ion-col> -->
+                <!-- <ion-col col-6><font class="txt1">Status:</font> <font style="color: rgb(202, 135, 48)">{{post.status}}</font> </ion-col> -->
+              </ion-row>
+              <ion-row>
+               
+                <ion-col col-6><font class="txt1">Pocket : {{request.pocketName}} </font></ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-3 style="color: lavender" ><ion-row text-center>  &nbsp;&nbsp;&nbsp;<ion-icon  style="font-size: 25px;padding-left: 7px" ios="ios-eye" md="md-eye"></ion-icon></ion-row>
+            <ion-row>{{request.waitingIn}}</ion-row>
+          </ion-col>
+            </ion-row>
+            </ion-item>
+            <ion-item no-lines class="trns" *ngIf="request.waitingIn=='Approved'" style="background-color: #21824d; margin-top: 3px;border-radius: 8px">
+              <ion-row>
+            <ion-col col-9>
+              <ion-row>
+                <ion-col col-10><font class="txt1">{{request.customerName}}</font></ion-col>
+                <!-- <ion-col col-2><img src="assets/imgs/Bayer.png"></ion-col> -->
+                <!-- <ion-col col-6><font class="txt1">Status:</font> <font style="color: rgb(202, 135, 48)">{{post.status}}</font> </ion-col> -->
+              </ion-row>
+              <ion-row>
+               
+                <ion-col col-6><font class="txt1">Pocket : {{request.pocketName}} </font></ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-3 style="color: lavender" ><ion-row text-center> &nbsp;&nbsp;&nbsp;<ion-icon  style="font-size: 25px;padding-left: 7px" ios="ios-eye" md="md-eye"></ion-icon></ion-row>
+            <ion-row>{{request.waitingIn}}</ion-row>
+          </ion-col>
+            </ion-row>
+            </ion-item>
+      <!-- </ion-item> -->
+      </div>
+     
+  
+    <div *ngIf="nodata" style="text-align: center;color: #10384F">
+        <ion-card>
+          <label style="color: white; font-size: 15px">
+           No records found.
+          </label>
+        </ion-card>
+    </div>
+
+</ion-content>

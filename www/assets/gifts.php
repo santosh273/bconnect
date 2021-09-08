@@ -1,0 +1,35 @@
+<?php
+header('Access-Control-Allow-Origin: *'); 
+?>
+[
+{
+    "idx":"1",
+    "points":"18000",
+    "desc":"Siliver",
+    "img":"https://images.freeimages.com/images/small-previews/2fe/butterfly-1390152.jpg"
+},
+{
+    "idx":"2",
+    "points":"8000",
+    "desc":"GOLD",
+    "img":"http://www.myorberalife.com/wp-content/uploads/2015/01/orbera-day-7.jpg"
+},
+{
+    "idx":"3",
+    "points":"12000",
+    "desc":"Coins",
+    "img":"https://images.freeimages.com/images/premium/small-comps/6826/6826032-friendly-teacher.jpg"
+},
+{
+    "idx":"4",
+    "points":"8000",
+    "desc":"GOLD",
+    "img":"https://images.freeimages.com/images/premium/previews/1502/15029204-happy-woman-singing-with-a-microphone.jpg"
+},
+{
+    "idx":"5",
+    "points":"8000",
+    "desc":"GOLD",
+    "img":"https://images.freeimages.com/images/premium/previews/4308/43084012-close-up-of-hot-fresh-pizza-lifted-slice-with-fresh-ingredients.jpg"
+}
+]

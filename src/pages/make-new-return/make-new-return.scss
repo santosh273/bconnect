@@ -1,0 +1,36 @@
+page-make-new-return {
+    #myInput {
+        width: calc(100% - 10px);
+        border: 0;
+        border-radius: 0;
+        // border: 1px solid rgb(0, 0, 0);
+        background: transparent;
+    }
+    .text-input {
+        margin: 5px 1px;
+        background: transparent;
+    }
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid rgb(255, 255, 255);
+        margin: 1em 0;
+        padding: 0; 
+    }    
+    .card{
+        background:		#10384F;
+        color: #ffffff;
+    }
+    .trns {
+        border-color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
+        color: white; } 
+
+        .datetime {
+            padding: 13px 31px 13px 16px;
+        }
+        // .item-md [item-left], .item-md [item-right], .item-md [item-start], .item-md [item-end] {
+        //     margin: 9px 8px 9px 0;
+        // }
+}

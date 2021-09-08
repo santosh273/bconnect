@@ -1,0 +1,104 @@
+<!--
+  Generated template for the MakeAComplainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Customer Support</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg">
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+            <ion-col col-12 style="text-align: center">
+                <ion-item style="padding-left: 0px;" class="trns"> 
+                    <ion-label  class="trns" style="padding: 0px;color: #ffffff">Support Type *:</ion-label>
+                    <ion-select placeholder="Please Select" style="border: 2px solid white;color: #ffffff;margin-right: 5px;padding-right: 7px;" class="trns" interface="action-sheet" (ionChange)="showChangeRequestType()" [(ngModel)]="selectedComp">
+                      
+                        <ion-option *ngFor="let comp of compType" value="{{comp.idx}}">{{comp.complainTypes}}</ion-option>
+                        <!-- <ion-option  value="2">Suggestion</ion-option> -->
+                      
+                    
+                    </ion-select>
+                  </ion-item> </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col col-4><ion-item style="padding-left: 0px" class="trns"><ion-label>Subject *:</ion-label></ion-item></ion-col>
+            <ion-col col-8><ion-item class="trns"><ion-textarea style="border: 2px solid white; border-radius: 5px;" placeholder="Subject" rows="3" maxLength="500" [(ngModel)]="subject" ></ion-textarea></ion-item></ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="showComCat">
+            <ion-col col-12 style="text-align: center">
+                <ion-item style="padding-left: 0px;" class="trns"> 
+                    <ion-label  class="trns" style="padding: 0px;color: #ffffff">Support Category *:</ion-label>
+                    <ion-select  placeholder="Please Select" style="border: 2px solid white;color: #ffffff;margin-right: 5px;padding-right: 7px;" class="trns" interface="action-sheet"    [(ngModel)]="selectedCat">
+                      
+                        <ion-option *ngFor="let cat of complainCat"   value="{{cat.complainCategory}}">{{cat.complainCategory}}</ion-option>
+                       
+                      
+                    
+                    </ion-select>
+                  </ion-item> </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="showReq">
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12 style="text-align: center">
+                <ion-item style="padding-left: 0px;" class="trns"> 
+                    <ion-label  class="trns" style="padding: 0px;color: #ffffff">Request Type *:</ion-label>
+                    <ion-select  placeholder="Please Select" style="border: 2px solid white;color: #ffffff;margin-right: 5px;padding-right: 7px;" class="trns" (ionChange)="showImg()" interface="action-sheet" [(ngModel)]="selectedReq">
+                      
+                        <ion-option *ngFor="let req of requestType"  value="{{req.changeRequestType}}">{{req.changeRequestType}}</ion-option>
+                    </ion-select>
+                  </ion-item> 
+                </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="!imge" >
+            <ion-col col-6> <ion-item style="padding-left: 0px" class="trns"><ion-label>Change Request Text:</ion-label></ion-item></ion-col>
+            <ion-col col-6> <ion-item style="padding-left: 0px" class="trns"><ion-input style=" border: 2px solid white; border-radius: 3px;margin-top: -7px;height:30px "  type="text" [(ngModel)]="changeReqTxt"></ion-input></ion-item></ion-col>
+        </ion-row>
+        <ion-row *ngIf="imge" >
+         
+          <ion-col col-6>
+             <ion-buttons>
+              <button ion-button icon-left (click)="presentActionSheet()">
+                <ion-icon name="camera"></ion-icon>Select Image
+              </button>
+              </ion-buttons>
+            </ion-col>
+            <ion-col col-3></ion-col>
+            <ion-col col-2 style="padding:0px"> <ion-thumbnail style="padding: 0px;margin: 0px;height:65%" (click)=" showImgg(pathForImage(attachImg))" item-end><img src="{{pathForImage(attachImg)}}" [hidden]="attachImg === undefined" ></ion-thumbnail></ion-col>
+            <!-- <ion-col col-6> <ion-item style="padding-left: 0px" class="trns"><ion-label>Change Request Text:</ion-label></ion-item></ion-col>
+            <ion-col col-6> <ion-item style="padding-left: 0px" class="trns"><ion-input style=" border: 2px solid white; border-radius: 3px;margin-top: -7px;height:30px "  type="text" [(ngModel)]="changeReqTxt"></ion-input></ion-item></ion-col> -->
+        </ion-row>
+    </ion-grid>
+
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+    <font style="color: white">Description</font>  
+    </ion-card-header>
+    <ion-card-content>
+        <ion-textarea style="border: 2px solid white; border-radius: 5px;" placeholder="Description" rows="3" maxLength="500" [(ngModel)]="remarks" ></ion-textarea>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+<ion-footer>
+    <div style="text-align: center">
+      <button ion-button color="thm" round style="text-transform: none;" (click)=" postComplain()"><ion-icon style="padding-right: 10px" name="ios-create-outline"></ion-icon>Submit Request</button>
+    </div>
+  </ion-footer>

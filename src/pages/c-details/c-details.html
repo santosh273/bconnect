@@ -1,0 +1,458 @@
+<!--
+  Generated template for the CDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+  <ion-navbar>
+    <p style="font-size: 20px;margin: 3px;padding-top:3px">
+      <font style="color: #424242;">
+        <b > Dealer Application Form</b>
+      </font>
+      <img align="right" style="height: 46px;width: 45px; margin-top: -13px;" src="assets/imgs/Bayer.png">
+    </p>
+    <!-- <ion-title>Customers Details</ion-title> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg">
+  <br> 
+  <!-- <h3 >Customer Location.</h3>  -->
+  <!-- <div style=" border-radius: 5px; border: 2px solid azure;">
+    <div #map id="map" style="height: 240px;"></div>
+  </div> -->
+  <!-- <br> -->
+  <div>
+    <ion-card-header style=" margin-bottom: -17px;color: black;font-size: 2rem;">
+      New Customer Details.
+    </ion-card-header>
+    <ion-card-content style="font-size: 18px;">
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Zone</ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="zone" [(ngModel)]="req.Zone1"></ion-input>
+      </ion-item>
+
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Region</ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="shopName" [(ngModel)]="req.Region1"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked> Sales Circle </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="shopName" [(ngModel)]="req.SalesCircle1"></ion-input>
+      </ion-item> -->
+
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Territory</ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="shopName" [(ngModel)]="req.Territory1"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Pocket</ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="shopName" [(ngModel)]="req.pocketName"></ion-input>
+      </ion-item> -->
+
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Shop Name </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="shopName" [(ngModel)]="req.customerName"></ion-input>
+      </ion-item>
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Name of Proprietor </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="nameOfProprietor" [(ngModel)]="req.propretiorName"></ion-input>
+      </ion-item>
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Proprietor CNIC </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="proprietorCNIC" [(ngModel)]="req.cnic"></ion-input>
+      </ion-item>
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Cell # </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="cell" [(ngModel)]="req.phoneNo11"></ion-input>
+      </ion-item>
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked> Bank Name </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="cell" [(ngModel)]="req.BankName"></ion-input>
+      </ion-item>
+
+
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Bank A/C Number </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="AccountNo" [(ngModel)]="req.AccountNo"></ion-input>
+      </ion-item>
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Branch Code </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="BranchCode" [(ngModel)]="req.BranchCode"></ion-input>
+      </ion-item>
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Bank A/C Title </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="AccountTitle" [(ngModel)]="req.AccountTitle"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item   class="trns">
+            <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Decision Maker Name  </ion-label>
+            <ion-input  [readonly]='true'  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="DMN" [(ngModel)]="req.decisionMaker"></ion-input>
+          </ion-item> -->
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Tehsil </ion-label>
+        <ion-textarea [readonly]='true' row="2" style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="businessAddress"
+          [(ngModel)]="req.tehsilName"></ion-textarea>
+      </ion-item>
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Business Address </ion-label>
+        <ion-textarea row="2" style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="businessAddress" [(ngModel)]="req.address"></ion-textarea>
+      </ion-item>
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>District </ion-label>
+        <ion-textarea [readonly]='true' row="2" style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="businessAddress"
+          [(ngModel)]="req.DistrictName"></ion-textarea>
+      </ion-item>
+
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>City </ion-label>
+        <ion-textarea [readonly]='true' row="2" style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="businessAddress"
+          [(ngModel)]="req.CityName"></ion-textarea>
+      </ion-item>
+
+
+
+      <ion-item class="trns">
+        <ion-label style="font-size: 1.8rem" color="primary" stacked>Date of Birth </ion-label>
+
+        <ion-input [readonly]='true' placeholder="Please double click." style=" border: 2px solid #0091DF;padding-left: 4px; color: black"
+          name="Dob" [(ngModel)]="req.Dob"></ion-input>
+      </ion-item>
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Education </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="Education" [(ngModel)]="req.Education"></ion-input>
+      </ion-item>
+
+
+      <br>
+      <ion-row style="height:auto;padding:2px; margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+        <ion-col col-7 style="color: #0091DF;font-size: 1.3em">
+          &nbsp; Runs a pesticide business
+        </ion-col>
+        <ion-col align="right" style="text-align: right" col-5>
+          <p style="padding: 4px" style="text-align: right">
+            <input type="radio" name="RunPesticideBusiness" checked>{{req.RunPesticideBusiness}}</p>
+          <!-- <p style="padding: 7px" style="text-align: right"> <input   name="RunPesticidebusiness"  [(ngModel)]="req.RunPesticideBusiness"></p> -->
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Duration of Pesticides Business </ion-label>
+        <ion-input style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="durationPB" [(ngModel)]="req.NoOfYearsInMarket"></ion-input>
+      </ion-item>
+      <br>
+      <ion-row style="height:auto;padding:2px; margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+        <ion-col col-7 style="color: #0091DF;font-size: 1.3em">
+          Siblings / Father operating pesticide business
+        </ion-col>
+        <ion-col align="right" style="text-align: right" col-5>
+          <p style="padding: 4px" style="text-align: right">
+            <input type="radio" name="Siblings" checked>{{req.Siblings}}</p>
+          <!-- <p class="trns" style="text-align: right">  <input class="trns"   name="RunPesticidebusiness"  [(ngModel)]="req.Siblings"></p> -->
+          <!-- <p style="text-align: right"> <input type="radio" *ngIf="" name="Siblings" value="Yes" [(ngModel)]="Siblings"> Yes <input type="radio" name="Siblings" value="No" [(ngModel)]="Siblings"> No</p> -->
+        </ion-col>
+      </ion-row>
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>NO of Years:</ion-label>
+        <ion-input style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="NoOfYearsInMarket" [(ngModel)]="req.NoofYearsWithBayer"></ion-input>
+      </ion-item>
+      <br>
+      <ion-row style="height:auto;padding:2px; margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+        <ion-col col-7 style="color: #0091DF;font-size: 1.3em">
+          Has this person been in black list of BCS
+        </ion-col>
+        <ion-col align="right" style="text-align: right" col-5>
+          <p style="padding: 4px" style="text-align: right">
+            <input type="radio" name="BlacklistBCS" checked>{{req.BlacklistBCS}}</p>
+          <!-- <p class="trns" style="text-align: right">  <input class="trns"  name="RunPesticidebusiness"  [(ngModel)]="req.BlacklistBCS"></p> -->
+          <!-- <p style="padding: 4px" style="text-align: right"> <input type="radio" name="BlacklistBCS" value="Yes" [(ngModel)]="BlacklistBCS"> Yes <input type="radio" name="BlacklistBCS" value="No" [(ngModel)]="BlacklistBCS"> No</p> -->
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row style="padding:2px;;padding-bottom: 16px; margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+        <ion-col col-7 style="color: #0091DF;font-size: 1.3em">
+          Has this person been working with BCS with any other name?
+        </ion-col>
+        <ion-col align="right" style="text-align: right" col-5>
+          <p style="padding: 4px" style="text-align: right">
+            <input type="radio" name="WorkingwithBCS" checked>{{req.WorkingwithBCS}}</p>
+          <!-- <p class="trns" style="text-align: right">  <input class="trns"  name="RunPesticidebusiness"  [(ngModel)]="req.WorkingwithBCS"></p> -->
+          <!-- <p style="text-align: right"> <input type="radio" name="WorkingwithBCS" value="Yes" [(ngModel)]="WorkingwithBCS"> Yes <input type="radio" name="WorkingwithBCS" value="No" [(ngModel)]="WorkingwithBCS"> No</p> -->
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>If Previously working with Bayer: BCS ID </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="BCSID" [(ngModel)]="req.BCSYesNo"></ion-input>
+      </ion-item>
+      <!-- <ion-row style="height:auto; margin-left: 16px;margin-right: 8px;">
+        <ion-col col-9>
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Owner Name </ion-label>
+          <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="OwnerName" [(ngModel)]="req.OwnerName"></ion-input>
+        </ion-col>
+
+        <ion-col align="right" style="text-align: right" col-3>
+          <p style="text-align: right;    padding-top: 33px;">
+            <input type="radio" name="OwnerNameOption" checked>{{req.OwnerNameOption}}</p>
+      
+        </ion-col>
+
+      </ion-row> -->
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Category </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="OwnerName" [(ngModel)]="req.CategoryName"></ion-input>
+ 
+      </ion-item>
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Working capital to be invested (Rs.) </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="WorkingCapital" [(ngModel)]="req.WorkingCapital"></ion-input>
+      </ion-item>
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Business Plan 1st year: </ion-label>
+        <ion-input style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="businessPlanYear1" [(ngModel)]="req.Bp1st"></ion-input>
+      </ion-item>
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Business Plan 2nd year: </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="businessPlanYear2"
+          [(ngModel)]="req.Bp2nd"></ion-input>
+      </ion-item>
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Competition Companies </ion-label>
+      </ion-item>
+      <div style="border-radius: 5px;margin:2px;padding-bottom: 2px; background-color: rgba(155, 198, 208, 0.374)">
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Company  Name 1</ion-label>
+          <ion-input [readonly]='true' placeholder=" 1." style=" border: 2px solid #0091DF;padding-left: 4px;margin-bottom: 2px; color: black"
+            name="cc1" [(ngModel)]="req.CompetitionCompanies"></ion-input>
+        </ion-item>
+
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Sales in (MIO).</ion-label>
+          <ion-input [readonly]='true' placeholder=" 1." style=" border: 2px solid #0091DF;padding-left: 4px;margin-bottom: 2px; color: black"
+            name="cc1" [(ngModel)]="req.C1sale"></ion-input>
+        </ion-item>
+      </div>
+
+      <br>
+      <div style="border-radius: 5px;margin:2px;padding-bottom: 2px; background-color: rgba(155, 198, 208, 0.374)">
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Company Name 2</ion-label>
+          <ion-input [readonly]='true' placeholder=" 2." style=" border: 2px solid #0091DF;padding-left: 4px;margin-bottom: 2px; color: black"
+            name="cc2" [(ngModel)]="req.CompetitionCompanies1"></ion-input>
+        </ion-item>
+
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Sales in (MIO).</ion-label>
+          <ion-input [readonly]='true' placeholder=" 1." style=" border: 2px solid #0091DF;padding-left: 4px;margin-bottom: 2px; color: black"
+            name="cc1" [(ngModel)]="req.C2sale"></ion-input>
+        </ion-item>
+      </div>
+      <br>
+      <div style="border-radius: 5px;margin:2px;padding-bottom: 2px; background-color: rgba(155, 198, 208, 0.374)">
+
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Company  Name 3</ion-label>
+          <ion-input [readonly]='true' placeholder=" 3." style=" border: 2px solid #0091DF;padding-left: 4px;margin-bottom: 2px; color: black"
+            name="cc3" [(ngModel)]="req.CompetitionCompanies11"></ion-input>
+        </ion-item>
+
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Sales in (MIO).</ion-label>
+          <ion-input [readonly]='true' placeholder=" 1." style=" border: 2px solid #0091DF;padding-left: 4px;margin-bottom: 2px; color: black"
+            name="cc1" [(ngModel)]="req.C3sale"></ion-input>
+        </ion-item>
+      </div>
+
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Total Pesticide Business in Previous Year: Mio (Rs.) </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="TotalPesticidesPreviousYear"
+          [(ngModel)]="req.TotalPesticidesPreviousYear"></ion-input>
+      </ion-item>
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Shop location </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="SLPesticideMarket"
+          [(ngModel)]="req.Market"></ion-input>
+      </ion-item>
+      <!-- <ion-item   class="trns">
+            <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Shop location : Grain Market  </ion-label>
+            <ion-input  [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="grainMarket" [(ngModel)]="req.GrainMarket"></ion-input>
+          </ion-item>
+          <ion-item   class="trns">
+            <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Shop location : Adda/Sun Market  </ion-label>
+            <ion-input  [readonly]='true'  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="sunMarket" [(ngModel)]="req.AddSun"></ion-input>
+          </ion-item>
+        
+          <ion-item   class="trns">
+            <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Shop location : Other Market  </ion-label>
+            <ion-input  [readonly]='true'  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="OtherSL" [(ngModel)]="req.Other"></ion-input>
+          </ion-item> -->
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Government license Number </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="GovLicenseNo" [(ngModel)]="req.GovLicenseNo"></ion-input>
+      </ion-item>
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Valid up to </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="ValidupTo" [(ngModel)]="req.ValidupTo"></ion-input>
+      </ion-item>
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Justification/reason for appointing new dealer. </ion-label>
+        <ion-textarea [readonly]='true' style=" border: 2px solid #0091DF; color: black" name="reasonForOpeningAC" rows="3" [(ngModel)]="req.JustificationsReasonsForAppoint"></ion-textarea>
+      </ion-item>
+
+      <div style="border-radius: 5px;margin:2px;padding-bottom: 2px; background-color: rgba(155, 198, 208, 0.374)">
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Distance from closest Bayer Dealer1:(KM) </ion-label>
+          <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="closestBDealerKM" [(ngModel)]="req.Distance1"></ion-input>
+        </ion-item>
+
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Dealer Name 1 </ion-label>
+          <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="closestDealerName"
+            [(ngModel)]="req.DealerName1"></ion-input>
+        </ion-item>
+
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Dealer Code 1 </ion-label>
+          <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="closestDealerCode"
+            [(ngModel)]="req.DealerCode1"></ion-input>
+        </ion-item>
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>LY sales of dealer 1 </ion-label>
+          <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="LYSales" [(ngModel)]="req.LySales1"></ion-input>
+        </ion-item>
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Sales Plan of dealer 1 </ion-label>
+          <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="salesPlane" [(ngModel)]="req.SalesPlan1"></ion-input>
+        </ion-item>
+      </div>
+      <div style="border-radius: 5px;margin:2px;padding-bottom: 2px; background-color: rgba(155, 198, 208, 0.374)">
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Distance from closest Bayer Dealer 2:(KM) </ion-label>
+          <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="closestBDealerKM2"
+            [(ngModel)]="req.Distance2"></ion-input>
+        </ion-item>
+
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Dealer Name 2 </ion-label>
+          <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="closestDealerName2"
+            [(ngModel)]="req.DealerName2"></ion-input>
+        </ion-item>
+
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Dealer Code 2 </ion-label>
+          <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="closestDealerCode2"
+            [(ngModel)]="req.DealerCode2"></ion-input>
+        </ion-item>
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>LY sales of dealer 2 </ion-label>
+          <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="LYSales2" [(ngModel)]="req.LySales2"></ion-input>
+        </ion-item>
+        <ion-item class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Sales Plan of dealer 2 </ion-label>
+          <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="salesPlan2" [(ngModel)]="req.SalesPlan2"></ion-input>
+        </ion-item>
+      </div>
+      <!-- <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Negtive Conflict dealer: No </ion-label>
+          <ion-input  [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="date" [(ngModel)]="req.NegativeImpactNo"></ion-input>
+          
+        </ion-item>
+    
+        <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Negtive Conflict dealer: Yes </ion-label>
+          <ion-input  [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="date" [(ngModel)]="req.NegativeImpactYes"></ion-input>
+        
+        </ion-item> -->
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>-ve Impact on existing dealer sales(value)</ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="impactValue" [(ngModel)]="req.ImpactValue"></ion-input>
+      </ion-item>
+
+      <ion-item class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Date </ion-label>
+        <ion-input [readonly]='true' style=" border: 2px solid #0091DF;padding-left: 4px; color: black" name="date" [(ngModel)]="req.creationDate"></ion-input>
+      </ion-item>
+
+
+    </ion-card-content>
+  </div>
+  <div style=" margin: 3px; border-radius: 5px; border: 2px solid azure;">
+    <ion-card-header>
+      Attachments
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- <ion-row text-center ><ion-col > <img *ngIf="req.profileImage != ''" style="border-radius: 50px" height='200px' (click)='Viewfile(imgUrl+req.profileImage)' src="{{imgUrl}}{{req.profileImage}}"/></ion-col></ion-row> -->
+      <ion-row>
+        <ion-col col-6 *ngFor="let a of attach">
+          <img *ngIf="a.attachment1 !=''" height='200px' (click)='Viewfile(imgUrl + a.attachment1)' [src]="imgUrl + a.attachment1"
+          />
+        </ion-col>
+      </ion-row>
+      <!-- <ion-row ><ion-col col-6 *ngIf="img2 !=  imgUrl+'-'"> <img  height='200px' (click)='Viewfile(img2)' src="{{img2}}"/></ion-col><ion-col col-6 *ngIf="img3 !=  imgUrl+'-'"> <img  height='200px' (click)='Viewfile(img3)' src="{{img3}}"/></ion-col></ion-row>
+      <ion-row ><ion-col col-6> <img *ngIf="img4 !=  imgUrl+'-'"height='200px' (click)='Viewfile(img4)' src="{{img4}}"/></ion-col><ion-col col-6 *ngIf="img5 !=  imgUrl+'-'" > <img height='200px' (click)='Viewfile(img5)' src="{{img5}}"/></ion-col></ion-row>
+      <ion-row ><ion-col col-6> <img *ngIf="img6 !=  imgUrl+'-'"height='200px' (click)='Viewfile(img6)' src="{{img6}}"/></ion-col><ion-col col-6 *ngIf="img7 !=  imgUrl+'-'" > <img height='200px' (click)='Viewfile(img7)' src="{{img7}}"/></ion-col></ion-row> -->
+    </ion-card-content>
+  </div>
+  <br>
+  <ion-title *ngIf="adminRemarks !== null || adminRemarks !== undefined">Remarks</ion-title>
+  <ion-item style=" border: 2px solid #0091DF; color: black;margin-bottom: 3px" *ngFor="let r of adminRemarks" class="trns">
+    <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>{{r.empname}}
+      <p style="float: right;color: darkcyan ;">{{r.creationDate}}</p>
+      <p style="color: #004726;margin: 5px">Status: {{r.status}}</p>
+
+      <p style="color: #0091DF; margin: 5px" name="reasonForOpeningAC">Comments : {{r.remarks}}</p>
+
+    </ion-label>
+
+
+  </ion-item>
+  <br>
+  <ion-row>
+    <ion-col col-6 *ngIf="btnApprove">
+      <ion-buttons left>
+        <button color="secondary" left ion-button icon-only (click)="confirm('approve')">
+
+          <ion-icon name="done-all"></ion-icon>
+          Approve &nbsp;&nbsp;
+        </button>
+      </ion-buttons>
+    </ion-col>
+
+    <ion-col col-6 *ngIf="btnReject">
+      <ion-buttons right>
+        <button color="danger" right ion-button icon-only (click)="confirm('reject')">
+          &nbsp;&nbsp; Reject
+          <ion-icon name='md-close'></ion-icon>
+
+        </button>
+      </ion-buttons>
+    </ion-col>
+
+  </ion-row>
+</ion-content>

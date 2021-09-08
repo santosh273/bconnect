@@ -1,0 +1,52 @@
+<!--
+  Generated template for the MyDocPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <!-- <ion-title>My Documents</ion-title> -->
+    <p style="font-size: 20px;margin: 3px;padding-top:3px"><font style="color: #424242;"><b>My Documents</b></font> <img align="right" style="height: 46px;width: 45px; margin-top: -13px;" src="assets/imgs/Bayer.png"></p>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg">
+  <ion-list>
+      <ion-item class="trns" *ngFor="let post of posts; " (click)="Viewfile(post.filename)">
+          <ion-grid>
+              <ion-row>
+                <ion-col col-3>
+                  <img *ngIf="post.thumbnail != null" src="{{imgURL}}{{post.thumbnail}}">
+                  <img *ngIf="post.thumbnail == null" src="assets/imgs/nophoto.jpg">
+                </ion-col>
+            <ion-col col-7>
+              <ion-row>
+                <ion-col col-10 text-wrap><font class="txt">File Name: {{post.filename}}</font></ion-col>
+                <!-- <ion-col col-2><img src="assets/imgs/Bayer.png"></ion-col> -->
+                <!-- <ion-col col-6><font class="txt">Status:</font> <font style="color: rgb(202, 135, 48)">{{post.status}}</font> </ion-col> -->
+              </ion-row>
+              <ion-row>
+               
+                <ion-col col-6><font class="txt">Date: {{post.date}} </font></ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2 style="color: #66B512" ><ion-row><ion-icon  style="font-size: 25px;padding-left: 7px" ios="ios-eye" md="md-eye"></ion-icon></ion-row>
+            <ion-row>view</ion-row>
+          </ion-col>
+            </ion-row>
+            </ion-grid>
+      </ion-item>
+  </ion-list>
+  <div *ngIf="nodata" style="text-align: center">
+      <ion-card>
+        <label style="color: white; font-size: 15px">
+         No records found.
+        </label>
+      </ion-card>
+  </div>
+
+</ion-content>

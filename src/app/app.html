@@ -1,0 +1,107 @@
+<ion-menu [content]="content">
+  <!-- <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <ion-content class="bg">
+    <div style="border-bottom: 1px dotted #0075A6">
+    <ion-item no-lines class="trns">
+        <!-- <ion-row>
+            <ion-col> <img style="height: 100px;width: 100px;margin-left: -5px " src="assets/imgs/Bayer.png"></ion-col>
+            <ion-col style="text-align: left">
+                <h2 style="color: #D30F4B;padding-top: 64px;margin-left: -20px;font-size: 30px">BConnect</h2></ion-col>
+          </ion-row>
+
+          <ion-row>
+                <ion-col> <img style="height: 100px;width: 100px;margin-left: -5px " src="assets/imgs/Bayer.png"></ion-col>
+                <ion-col style="text-align: center">
+                    <h2 style="color: #D30F4B;padding-top: 64px;margin-left: -20px;font-size: 30px">BConnect</h2></ion-col>
+              </ion-row> -->
+              <div style="text-align: center">
+                  <img style="height: 77%;width: 77%;margin-left: -5px;border-radius: 30px; " src="assets/imgs/Bconnect_logo.png">
+                  <!-- <br> -->
+                  <!-- <img style="height: 40%;width: 40%;margin-left: -5px;border-radius: 00px; " src="assets/imgs/bconnecttxt.png"> -->
+            </div>
+    </ion-item>
+      
+
+  </div>
+    <ion-list style="margin-left: 3px">
+      <!-- <button style="font-size: 18px" class="trns"  menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          <ion-icon  style="color:#0091DF;margin-left: -1px;padding-right: 4px;font-size: 28px " name="home"></ion-icon> {{p.title}}
+      </button> -->
+      <button style="font-size: 18px" class="trns"  menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <img class="myicon" src="assets/imgs/side/home.png"> {{p.title}} {{Etime}} {{Euser}}
+        </button>
+       <button *ngIf="showSales" style="font-size: 18px" class="trns"  menuClose ion-item (click)="salesorder()">
+          <img class="myicon" src="assets/imgs/side/order4.png"> Sales Order
+      </button> 
+      <button *ngIf="showReturn" style="font-size: 18px" class="trns"  menuClose ion-item (click)="salesreturn()">
+          <img class="myicon" src="assets/imgs/side/return4.png"> Sales Return
+      </button>
+      <!-- <ion-item class="trns" > <details>
+          <summary>Saler Order</summary>
+          <button class="trns"  menuClose no-lines ion-item *ngFor="let p of pages" (click)="openPage(p)">
+              <img style="height: 15px;width: 15px" src="assets/imgs/view_request.png"> View Request
+          </button>
+          <button class="trns" menuClose no-lines ion-item *ngFor="let p of pages" (click)="openPage(p)">
+              <img style="height: 15px;width: 15px" src="assets/imgs/make_request.png"> Make a request
+          </button>
+        </details></ion-item>
+        <ion-item class="trns" > <details>
+            <summary>Saler Return</summary>
+            <button  menuClose class="trns" ion-item no-lines *ngFor="let p of pages" (click)="openPage(p)">
+                <img style="height: 15px;width: 15px" src="assets/imgs/view_request.png"> View Request
+            </button>
+            <button class="trns" menuClose no-lines ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                <img style="height: 15px;width: 15px" src="assets/imgs/make_request.png"> Make a request
+            </button>
+          </details></ion-item> -->
+          <button *ngIf="showScheme" style="font-size: 18px" class="trns"  menuClose ion-item (click)="scheme()">
+              <img class="myicon" src="assets/imgs/side/scheme4.png"> Schemes
+          </button>
+          <button *ngIf="showCPBP" style="font-size: 18px" class="trns"  menuClose ion-item (click)="CPBP()">
+                <ion-icon  style="color:#0091DF;padding-right: 4px;font-size: 28px " name="ios-bulb"></ion-icon> CPBP-Plan
+            </button>
+          <button style="font-size: 18px" class="trns"  menuClose ion-item (click)="complains()" >
+              <img class="myicon" src="assets/imgs/side/feed4.png"> Customer Support
+          </button>
+          <button style="font-size: 18px" class="trns"  menuClose ion-item  (click)="stock()">
+                <ion-icon  style="color:#0091DF;padding-right: 4px;font-size: 28px " name="ios-albums"></ion-icon> Stock Entry
+            </button>
+          <!-- <button style="font-size: 18px" class="trns"  menuClose ion-item  (click)="profile()">
+                <img class="myicon" src="assets/imgs/user.png"> 
+            </button> -->
+            <button *ngIf="showDocs" style="font-size: 18px" class="trns"  menuClose ion-item  (click)="myDoc()">
+                <ion-icon  style="color:#0091DF;padding-right: 4px;font-size: 28px " name="ios-mail"></ion-icon> My Documents
+            </button> 
+
+            <button *ngIf="showDocs_loyalty" style="font-size: 18px" class="trns"  menuClose ion-item  (click)="loyalityPoints()">
+                    <ion-icon  style="color:#0091DF;padding-right: 4px;font-size: 28px " name="ios-analytics"></ion-icon> Loyalty Points
+                </button>
+
+                <button *ngIf="showDocs_gift" style="font-size: 18px" class="trns"  menuClose ion-item  (click)="gifts()">
+                        <ion-icon  style="color:#0091DF;padding-right: 4px;font-size: 28px " name="ios-heart"></ion-icon> Gifts
+                    </button>
+
+            <button style="font-size: 18px" class="trns"  menuClose ion-item  (click)="profile()">
+                    <ion-icon  style="color:#0091DF;padding-right: 4px;font-size: 28px " name="md-person"></ion-icon>  Profile
+            </button>
+
+            <button style="font-size: 18px" class="trns"  menuClose ion-item  (click)="contactUs()">
+                <ion-icon  style="color:#0091DF;padding-right: 4px;font-size: 28px " name="md-call"></ion-icon>  Contact Us
+        </button>
+    </ion-list>
+  </ion-content>
+  <ion-footer>
+  <div style="text-align: center">
+    <button color="thm" full style="text-transform: none;"  ion-button (click)="logout()"> <ion-icon style="padding-right: 13px" name="md-log-out"></ion-icon> Logout</button>
+  </div>
+</ion-footer>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

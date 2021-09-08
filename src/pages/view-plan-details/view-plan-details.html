@@ -1,0 +1,54 @@
+<!--
+  Generated template for the ViewPlanDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>CPBP Plan Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg" style="padding: 2px">
+  <ion-card class="trns" *ngFor="let p of plan">
+    <ion-card-header text-center>
+     <ion-title><font  style="color: #eb0802">{{p.productName}}</font> </ion-title>
+    </ion-card-header>
+    <ion-card-content style="color: black">
+  
+      <ion-row>
+        <ion-col col-4>JAN : {{p.jan}}</ion-col>
+        <ion-col col-4>FEB : {{p.feb}}</ion-col>
+        <ion-col col-4>MAR : {{p.mar}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>APR : {{p.apr}}</ion-col>
+        <ion-col col-4>MAY : {{p.may}}</ion-col>
+        <ion-col col-4>JUN : {{p.jun}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>JUL : {{p.jul}}</ion-col>
+        <ion-col col-4>AUG : {{p.aug}}</ion-col>
+        <ion-col col-4>SEP : {{p.sep}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>OCT : {{p.oct}}</ion-col>
+        <ion-col col-4>NOV : {{p.nov}}</ion-col>
+        <ion-col col-4>DEC : {{p.dec}}</ion-col>
+      </ion-row>
+      <ion-row>
+      <ion-col col-12 style="background-color: coral">Growth Target : {{p.growthTargetCurrentYear}}</ion-col>
+      </ion-row>
+      <ion-row>
+      <ion-col col-12 style="background-color: chartreuse">Turnover : {{p.totalPesticideTurnOver}}</ion-col>
+      </ion-row>
+      <ion-row>
+      <ion-col col-12 style="background-color: cornflowerblue">Total Yearly :  {{p.totalYearly}}</ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,76 @@
+<!--
+  Generated template for the ViewReturnPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <!-- <ion-title>Return Request</ion-title> -->
+    <p style="font-size: 20px;margin: 4px"><font style="color: #424242;"><b>Return Request</b></font> <img align="right" style="height: 46px;width: 45px; margin-top: -10px;" src="assets/imgs/Bayer.png"></p>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg">
+  <ion-card style="background-color: #00617F">
+    <ion-list>
+      <ion-item class="trns" *ngFor="let detail of details">
+
+        <ion-row >
+          <ion-col col-6>Invoice No:</ion-col>
+          <ion-col col-6>{{detail.InvoiceNo}}</ion-col>
+        </ion-row>
+        <ion-row style="padding-top: 6px;padding-bottom: 6px">
+            <ion-col col-6>Request No:</ion-col>
+            <ion-col col-6>{{detail.RequestNo}}</ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col col-6>Amount:</ion-col>
+              <ion-col col-6>{{detail.Amount}}</ion-col>
+          </ion-row>
+          <ion-row *ngIf="detail.Attachment1 != '-'   " style="height: 14px;margin-bottom: 31px" (click)="Viewfile(detail.Attachment1)">
+              <ion-col col-5></ion-col>
+              <ion-col col-7 style="color: rgb(55, 55, 214)"><button ion-button color="thm" round style="text-transform: none;"> View Attachment 1</button> </ion-col>
+              <!-- <ion-col ><label style="color: #66B512"> <ion-icon  ios="ios-eye" md="md-eye"></ion-icon></label> view</ion-col> -->
+          </ion-row> 
+          <ion-row *ngIf="detail.Attachment2 != '-'   " style="height: 14px;margin-bottom: 31px" (click)="Viewfile(detail.Attachment2)">
+              <ion-col col-5></ion-col>
+              <ion-col col-7 style="color: rgb(55, 55, 214)"><button ion-button color="thm" round style="text-transform: none;"> View Attachment 2 </button> </ion-col>
+              <!-- <ion-col ><label style="color: #66B512"> <ion-icon  ios="ios-eye" md="md-eye"></ion-icon></label> view</ion-col> -->
+          </ion-row> 
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card style="background-color: #00617F">
+    <ion-card-header>
+      <font style="color: #66B512;">Products</font>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list no-lines class="trns">
+          <ion-grid item-content>
+          <ion-row style="color: #66B512;">
+              <ion-col col-6 style="border-bottom:1px solid #fff;">Product</ion-col>
+              <ion-col col-3  text-center style="border-bottom:1px solid #fff;">Quantity</ion-col>
+              <ion-col col-3 style="border-bottom:1px solid #fff;">Status</ion-col>
+             </ion-row>
+             
+          <!-- </ion-item> -->
+        <!-- <ion-item class="trns" no-lines > -->
+         
+          <ion-row  *ngFor="let pro of products">
+             
+              <ion-col text-wrap col-6 style="border-bottom:1px solid #fff;">{{pro.productName}}</ion-col>
+              <ion-col text-wrap text-center col-3 style="border-bottom:1px solid #fff;">{{pro.quantity}}</ion-col>
+              <ion-col text-wrap col-3 style="border-bottom:1px solid #fff;">{{pro.productStatus}}</ion-col>
+            </ion-row>
+            </ion-grid>
+        <!-- </ion-item> -->
+      </ion-list>
+    </ion-card-content>
+    </ion-card>
+
+</ion-content>

@@ -1,0 +1,64 @@
+<!--
+  Generated template for the ActivePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="force-back-button">
+    <!-- <ion-title>Active Schemes</ion-title> -->
+    <p style="font-size: 20px;margin: 3px;padding-top:3px">
+      <font style="color: #424242;">
+        <b>Active Schemes</b>
+      </font>
+      <img align="right" style="height: 46px;width: 45px; margin-top: -13px;" src="assets/imgs/Bayer.png">
+    </p>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg">
+  <div>
+    <ion-list>
+      <ion-item class="trns" *ngFor="let scheme of schemes; let i = index">
+        <ion-row>
+          <ion-col col-6 (click)="viewScheme(schemes[i])">
+            <ion-row>
+              <ion-col col4>
+                <font class="txt">Title: {{scheme.title}}</font>
+              </ion-col>
+          
+            </ion-row>
+            <ion-row>
+              <ion-row>
+                <ion-col col4>
+                  <font class="txt">Start Date: {{scheme.fromDate}}</font>
+                </ion-col>
+                <!-- <ion-col col4><font class="txt"> </font></ion-col> -->
+              </ion-row>
+              <ion-row>
+                <ion-col col4>
+                  <font class="txt">End Date: {{scheme.toDate}}</font>
+                </ion-col>
+
+              </ion-row>
+            </ion-row>
+          </ion-col>
+          <ion-col col-6 style="text-align: right;margin-top: 9%;">
+            <button (click)="Viewfile(scheme.attachment)" ion-button color="thm" round style="text-transform: none;"> View</button>
+          </ion-col>
+        </ion-row>
+
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngIf="nodata" style="text-align: center;color: #10384F">
+    <ion-card>
+      <label style="color: white; font-size: 15px">
+        No records found.
+      </label>
+    </ion-card>
+  </div>
+</ion-content>

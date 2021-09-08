@@ -1,0 +1,37 @@
+<!--
+  Generated template for the ViewStockPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Stock Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  class="bg">
+
+  <ion-card >
+    <ion-row style="margin-left: 10px">
+      <ion-col col-7 style=" border-bottom: 1px solid white">
+        <ion-label style="color: #66B512">Product Name</ion-label>
+      </ion-col>
+      <ion-col text-center   col-5  style="border-bottom: 1px solid white">
+          <ion-label style="color: #66B512">Quantity</ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row style="margin-left: 10px" *ngFor="let p of Products">
+        <ion-col col-7 text-wrap style="border-bottom: white">
+            <ion-label>{{p.ProductName}}</ion-label>
+          </ion-col>
+          <ion-col  col-5 text-center text-wrap style="border-bottom: white">
+              <ion-label>{{p.Quantity}}</ion-label>
+            </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>

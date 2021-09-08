@@ -1,0 +1,112 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.bg {
+   
+    background: white; /* For browsers that do not support gradients */
+    // background: linear-gradient(to top, 	rgba(0, 145, 233, 0.8)  , rgba(102, 181, 18, 0.616) 50%); /* Standard syntax (must be last) */
+    background: -webkit-linear-gradient(to bottom, 	rgb(225, 239, 207)  , rgba(102, 181, 18, 0.6) 100%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(to bottom, 	rgb(225, 239, 207)  , rgba(102, 181, 18, 0.6) 100%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to bottom, 	rgb(225, 239, 207)  , rgba(102, 181, 18, 0.6) 100%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, 	rgb(225, 239, 207)  , rgba(102, 181, 18, 0.6) 100%); /* Standard syntax */
+
+
+}
+
+
+    // .toolbar-background {
+    //      background: white; /* For browsers that do not support gradients */
+    //      background: linear-gradient(to right, 	rgba(0, 145, 233, 0.6)  , rgba(102, 181, 18, 0.6) 50%); 
+    //   }
+      .toolbar-background {
+        position:fixed;
+        background: -webkit-linear-gradient(to right, 	rgba(0, 145, 233, 0.2)  , rgba(102, 181, 18, 0.2) 50%); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(to right, 	rgba(0, 145, 233, 0.2)  , rgba(102, 181, 18, 0.2) 50%); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(to right, 	rgba(0, 145, 233, 0.2)  , rgba(102, 181, 18, 0.2) 50%); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to right, 	rgba(0, 145, 233, 0.2)  , rgba(102, 181, 18, 0.2) 50%); /* Standard syntax */
+    }
+// .bg {
+    
+//      background: white; /* For browsers that do not support gradients */
+//      // background: linear-gradient(to top, 	rgba(0, 145, 233, 0.8)  , rgba(102, 181, 18, 0.616) 50%); /* Standard syntax (must be last) */
+//      background: -webkit-linear-gradient(to top, 	rgba(68, 50, 71, 0.8)  , rgba(68, 50, 71, 0.2) 80%); /* For Safari 5.1 to 6.0 */
+//      background: -o-linear-gradient(to top, 	rgba(68, 50, 71, 0.8)  , rgba(68, 50, 71, 0.2) 80%); /* For Opera 11.1 to 12.0 */
+//      background: -moz-linear-gradient(to top, 	rgba(68, 50, 71, 0.8)  , rgba(68, 50, 71, 0.2) 80%); /* For Firefox 3.6 to 15 */
+//      background: linear-gradient(to top, 	rgba(68, 50, 71, 0.8)  , rgba(68, 50, 71, 0.2) 80%); /* Standard syntax */
+ 
+ 
+//  }
+ 
+ 
+//      // .toolbar-background {
+//      //      background: white; /* For browsers that do not support gradients */
+//      //      background: linear-gradient(to right, 	rgba(0, 145, 233, 0.6)  , rgba(102, 181, 18, 0.6) 50%); 
+//      //   }
+//        .toolbar-background {
+//          position:fixed;
+//          background: -webkit-linear-gradient(to right, 	rgba(68, 50, 71, 0.2)  , rgba(68, 50, 71, 0.2) 50%); /* For Safari 5.1 to 6.0 */
+//          background: -o-linear-gradient(to right, 	rgba(68, 50, 71, 0.2)  , rgba(68, 50, 71, 0.2) 50%); /* For Opera 11.1 to 12.0 */
+//          background: -moz-linear-gradient(to right, 	rgba(68, 50, 71, 0.2)  , rgba(68, 50, 71, 0.2) 50%); /* For Firefox 3.6 to 15 */
+//          background: linear-gradient(to right, 	rgba(68, 50, 71, 0.2)  , rgba(68, 50, 71, 0.2) 50%); /* Standard syntax */
+//      }
+    
+    //   .tbclr{
+    //     background: white; /* For browsers that do not support gradients */
+    //     background: linear-gradient(to right, 	rgba(0, 145, 233, 0.6)  , rgba(102, 181, 18, 0.6) 50%); 
+    //  }
+    // .tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text {
+       
+    //     color: rgba(102, 181, 18, 0.6);
+    // }
+    .tabs-md-tb .tab-button[aria-selected=true], .tabs-md-tb .tab-button[aria-selected=true] .tab-button-icon {
+        // color: #2B6636;
+        color:rgba(68, 50, 71, 0.8)
+    }
+    .trns {
+        border-color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
+        color: white; } 
+        .toolbar-content{
+            height: 30px;
+            
+        }
+        .txt{
+            color: 	#10384F
+        }
+
+        .myicon{
+            height: 27px;
+            width: 27px;
+            margin-bottom: -3px;
+            padding-right: 4px;
+        }
+        .toolbar-title-md {
+            padding: 5px 10px;}
+
+            .ion-input:focus {  
+                background-color: blue !important;
+}
+
+    // .modal-wrapper {
+    //     position: absolute;
+    //     margin: 30px;
+    //     // bottom: 40%;
+    //     // left: 48px;
+    //     display: block;
+    //     // width: 70%;
+    //     // height:45%;
+    //     }
+      

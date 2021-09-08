@@ -1,0 +1,215 @@
+<!--
+  Generated template for the MakeNewReturnPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <p style="font-size: 17px;margin: 3px;padding-top:3px"><font style="color: #424242;"><b>Sales Return-New Request</b></font> <img align="right" style="height: 46px;width: 45px; margin-top: -13px;" src="assets/imgs/Bayer.png"></p>
+
+    <!-- <ion-title>MakeNewReturn</ion-title> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg">
+
+  <ion-card no-lines style="margin-top: 8px">
+    <ion-item style="background-color: #10384F;padding-left: 15px;background-color: #10384F;margin-top: 7px">
+      <ion-row>
+        <ion-col col-6>
+          <font style="color: rgb(255, 255, 255);">Invoice * :</font>
+        </ion-col>
+        <ion-col class="trns" col-6 ion-item no-lines style="text-align: center">
+          <ion-input class="trns" type="number" [(ngModel)]="invoice" style="border: 1px solid rgb(192, 245, 203);height:30px;margin-top: -8px"></ion-input>
+        </ion-col>
+      </ion-row>
+
+
+      <!-- </ion-grid> -->
+    </ion-item>
+
+    <ion-item style="background-color: #10384F;padding-left: 15px;background-color: #10384F;margin-top: -14px">
+      <ion-row>
+        <ion-col col-6>
+          <ion-item style="padding-left: 0px;" class="trns">
+            <!-- <ion-label> -->
+              <font style="color: rgb(255, 255, 255);margin-top:10%;">Attachment 1 :</font>
+            <!-- </ion-label> -->
+          </ion-item>
+        </ion-col>
+        <ion-col class="trns" col-6 ion-item no-lines style="text-align: center;margin-top: -9px;">
+          <ion-buttons  >
+            <button ion-button  icon-left (click)="presentActionSheet(1)">
+              <ion-icon name="camera"></ion-icon>Choose
+            </button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+
+      <ion-row  *ngIf="attachImg1 != undefined">
+          <ion-col col-6> <ion-item style="padding-left: 0px;" class="trns"><ion-label></ion-label></ion-item></ion-col>
+          <ion-col class="trns" col-5 ion-item no-lines style="text-align: center;margin-top: -9px;">
+          <img src="{{pathForImage(attachImg1)}}" width="50" height="50" (click)=" showImg(pathForImage(attachImg1))">
+          </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+    <ion-item style="background-color: #10384F;padding-left: 15px;background-color: #10384F;margin-top: -14px">
+      <ion-row>
+        <ion-col col-6>
+          <ion-item style="padding-left: 0px;" class="trns">
+            <!-- <ion-label> -->
+              <font style="color: rgb(255, 255, 255);margin-top:10%;">Attachment 2 :</font>
+            <!-- </ion-label> -->
+          </ion-item>
+        </ion-col>
+        <ion-col class="trns" col-6 ion-item no-lines style="text-align: center;margin-top: -9px;">
+          <ion-buttons  >
+            <button ion-button  icon-left (click)="presentActionSheet(2)">
+              <ion-icon name="camera"></ion-icon>Choose
+            </button>
+          </ion-buttons>
+        </ion-col>
+     </ion-row>
+      <ion-row  *ngIf="attachImg2 != undefined">
+          <ion-col col-6> <ion-item style="padding-left: 0px;" class="trns"><ion-label></ion-label></ion-item></ion-col>
+          <ion-col class="trns" col-5 ion-item no-lines style="text-align: center;margin-top: -9px;">
+          <img src="{{pathForImage(attachImg2)}}" width="50" height="50" (click)="showImg(pathForImage(attachImg2))">
+          </ion-col>
+      </ion-row>
+    </ion-item>
+
+<!-- <ion-item style="background-color: #10384F;padding-left: 15px;background-color: #10384F;margin-top: -14px">
+        <ion-row >
+            <ion-col col-6 > <font style="color: rgb(255, 255, 255);" >upload:</font></ion-col>
+            <ion-col class="trns" col-12 ion-item no-lines style="text-align: center"><ion-buttons>
+                <button ion-button icon-left (click)="uploadImg()">
+                Upload
+                <ion-icon name="camera"></ion-icon>
+                </button>
+                </ion-buttons> </ion-col>
+          </ion-row>     
+</ion-item> -->
+
+    <!-- <ion-item class="trns" style="padding-left: 20px;background-color: #10384F;margin-top: 0px">
+
+      <ion-label style=" color: rgb(255, 255, 255);">Date :</ion-label>
+      <ion-datetime style=" color: rgb(76, 231, 76); " min="{{date}}" [(ngModel)]="date"></ion-datetime>
+    </ion-item> -->
+
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <font style="color: #66B512">Products</font>
+    </ion-card-header>
+
+    <ion-card-content>
+      <details>
+        <summary>Add Product</summary>
+        <ion-grid *ngFor="let row of pdrows;let i = index">
+          <ion-row>
+            <!-- <ion-col col-6 > <font style="color: #0075A6;"><b>Payment Type:</b></font></ion-col>
+                          <ion-col col-6 style="text-align: center">Online </ion-col> -->
+            <ion-col col-12 style="text-align: center">
+              <ion-item style="padding-left: 0px;" class="trns">
+                <ion-label class="trns" style="padding: 0px;color: #ffffff;">Products</ion-label>
+                <ion-select placeholder="Please Select" class="trns" interface="action-sheet" style="border: 1px solid rgb(192, 245, 203);padding: 0px;color:#ffffff;margin-right: 5px;padding-right: 7px;padding-left:3px"
+                  (ionChange)="calXquntity(i)" [(ngModel)]="selectedPrdouct[i]">
+
+                  <ion-option *ngFor="let pro of products" value="{{pro.idx}}">{{pro.ProductName}}</ion-option>
+
+                </ion-select>
+
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <!-- <ion-col col-6 > <font style="color: #0075A6;"><b>Payment Type:</b></font></ion-col>
+                            <ion-col col-6 style="text-align: center">Online </ion-col> -->
+            <ion-col col-12 style="text-align: center">
+              <ion-item style="padding-left: 0px;" class="trns">
+                <ion-label class="trns" style="padding: 0px;color: #ffffff;">Status *</ion-label>
+                <ion-select placeholder="Please Select" class="trns" interface="action-sheet" style="border: 1px solid rgb(192, 245, 203);padding: 0px;color:#ffffff;margin-right: 5px;padding-right: 7px;padding-left:3px"
+                   [(ngModel)]="status[i]" (ionChange)="checkStatus()">
+
+                  <ion-option value="Select">Select</ion-option>
+                  
+                
+                  <ion-option *ngIf="expired" value="Excess Stock">Excess Stock</ion-option>
+                  <ion-option *ngIf="salable" value="Near to Expiry">Near to Expiry</ion-option>
+                  <ion-option *ngIf="salable" value="Expiry">Expired</ion-option>
+                  <ion-option *ngIf="salable" value="Damage">Damage</ion-option>
+
+                </ion-select>
+
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <!-- <ion-row>
+                          <ion-col col-6>Carton:</ion-col>
+                          <ion-col col-6 ><ion-input [(ngModel)]="catron" style="border: 1px solid rgb(192, 245, 203);height:30px;margin-top: -8px"></ion-input > </ion-col>
+                        </ion-row> -->
+          <ion-row>
+            <ion-col col-6>
+              <ion-item style="padding-left: 0px;" class="trns">
+                <ion-label *ngIf="expired">Cartons *:</ion-label>
+                <ion-label *ngIf="!expired">Packs *:</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col class="trns" col-6 ion-item no-lines>
+              <ion-input (keyup)="calXquntity(i)" type="number" [(ngModel)]="quantity[i]" style="border: 1px solid rgb(192, 245, 203);height:30px;margin-top: -8px"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="expired">
+            <ion-col col-6>
+              <ion-item style="padding-left: 0px;" class="trns">
+                <ion-label>Pieces/carton *:</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col class="trns" col-6 ion-item no-lines>
+              <ion-input type="number" disabled="true" value="{{procal[i]}}" style="border: 1px solid rgb(192, 245, 203);height:30px;margin-top: -8px"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="expired ">
+              <!-- || status[i] =='Select' -->
+            <ion-col col-6>
+              <ion-item style="padding-left: 0px;" class="trns">
+                <ion-label>Quantity *:</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col class="trns" col-6 ion-item no-lines>
+              <ion-input type="number" disabled="true" value="{{products[0].calValue}" [(ngModel)]="calValue[i]" style="border: 1px solid rgb(192, 245, 203);height:30px;margin-top: -8px"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 style="text-align: right">
+              <img align="right" src="assets/imgs/delet.png" (click)="splicerow('pdrows',i)" style="height: 17px;width:17px">
+            </ion-col>
+          </ion-row>
+          <hr>
+        </ion-grid>
+        <div style="text-align: right">
+          <img align="right" src="assets/imgs/add_icon.png" style="height: 20px;width:20px;margin-bottom: 4px" (click)="pdaddrow()">
+        </div>
+      </details>
+      <!-- <ion-item> -->
+
+      <!-- </ion-item> -->
+      <!-- <button (click)="chekprice()">check</button> -->
+
+
+
+    </ion-card-content>
+
+  </ion-card>
+  <div style="text-align: center">
+    <button ion-button color="thm" round style="text-transform: none;" (click)=" submit()">
+      <ion-icon style="padding-right: 10px" name="ios-create-outline"></ion-icon>Submit Request</button>
+  </div>
+
+</ion-content>

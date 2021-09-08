@@ -1,0 +1,168 @@
+<!--
+  Generated template for the AsoHomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar style="background-color:white"  >
+        <!-- <ion-title style="text-align: center;padding:0px" >BConnect<img align="right" style="height: 25px;width: 25px;" src="assets/imgs/Bayer.png"></ion-title> -->
+        <p style="font-size: 20px;text-align: center;margin: 4px"><font style="color: #424242;"><img align="center" style="height: 52px;width: 58px; margin-top: -14px;" src="assets/imgs/Bconnect_logo.png"></font> <img align="right" style="height: 46px;width: 45px; margin-top: -10px;" src="assets/imgs/Bayer.png"></p>
+      </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bg" style="background-image: url('assets/imgs/background.jpg');background-repeat: no-repeat;background-size: 100%;">
+ 
+ 
+  <div text-center style="margin-top: -5px"><p><b><font style="color:#6bc200">Welcome : </font><font style="color: #6bc200">{{name}}</font> | <font style="color: cornsilk">{{code}}</font></b></p></div>  
+<div>
+  <ion-row text-center style=  "height: 35px; margin: 5px; ">
+    <ion-col style="font-size: 1.80em;background-color: #6bc200; padding-top: 5px; border-radius: 50% 50% ;" (click)="activeNext('grph')" col-6>Dashboard</ion-col>
+    <ion-col style="font-size: 1.80em;background-color: #0091df; padding-top: 5px; border-radius:50% 50% ;" (click)="activeNext('div')" col-6>Sales</ion-col>
+  </ion-row>
+  <!-- <button  (click)="activeNext('grph')" block ion-button color="secondary">Dasboard</button>
+
+  <button  (click)="activeNext('div')" ion-button color="danger">Sales</button> -->
+
+</div>
+  <div *ngIf="showGraph" style="text-align: center">
+      <br>
+      <font *ngIf="showtargetvsprogress" style="background-color: gray;color: white;font-size: 1.7em;float: left;border-bottom-right-radius: 12px;border-top-right-radius: 12px;">&nbsp;&nbsp;&nbsp;Annual Target Progress&nbsp;&nbsp;</font>
+      <br>
+      <br>
+      <div *ngIf="showtargetvsprogress"  class="container3">
+        <img class="centered3" *ngIf="!hideTarget" height="150px" src="assets/imgs/morph.gif">
+        <iframe *ngIf="targetvsprogress != undefined" (load)="onLoadT()" scrolling="no" frameborder="0" style="width:350px;height:340px; text-align: center"
+          [src]='targetvsprogress | safe' name="graph" id="graph"> </iframe>
+      </div>
+      <br>
+      <br>
+    <font *ngIf="showSalesProgression" style="color: white;font-size: 1.7em;float: left;background-color: gray;border-bottom-right-radius: 12px;border-top-right-radius: 12px;">&nbsp;&nbsp;&nbsp;Monthly Sales Progress&nbsp;&nbsp;</font>
+    <br>
+    <br>
+    <div *ngIf="showSalesProgression" class="container">
+      <img class="centered" *ngIf="!hideLoader" height="150px" src="assets/imgs/chart.gif">
+      <iframe  *ngIf="salesProgression != undefined" (load)="onLoadL()" scrolling="no" frameborder="0" style="width:350px;height:340px; text-align: center"
+        [src]='salesProgression | safe' name="graph" id="graph"> </iframe>
+    </div>
+    <br>
+    <br>
+    <font *ngIf="showBarGraph" style=" background-color: gray;color: white;font-size: 1.7em;float: left;border-bottom-right-radius: 12px;border-top-right-radius: 12px;">&nbsp;&nbsp;&nbsp;Annual Sales Progression&nbsp;&nbsp;</font>
+    <br>
+    <br>
+    <div *ngIf="showBarGraph" class="container1">
+      <img class="centered2" *ngIf="!hideBar" height="150px" src="assets/imgs/barchart.gif">
+      <iframe *ngIf="barGraph != undefined" (load)="onLoadB()" scrolling="no" frameborder="0" style="width:350px;height:340px; text-align: center"
+        [src]='barGraph | safe' name="graph" id="graph"> </iframe>
+    </div>
+  
+    <br>
+    <br>
+    <font *ngIf="showFocusBrand" style=" background-color: gray;color: white;font-size: 1.7em;float: left;border-bottom-right-radius: 12px;border-top-right-radius: 12px;">&nbsp;&nbsp;&nbsp;Focus Brand&nbsp;&nbsp;</font>
+    <br>
+    <br>
+    <div *ngIf="showFocusBrand" class="container2">
+      <img class="centered2" *ngIf="!hideFocus" height="150px" src="assets/imgs/chart.gif">
+      <iframe *ngIf="focusbrand != undefined" (load)="onLoadF()" scrolling="no" frameborder="0" style="width:350px;height:340px; text-align: center"
+        [src]='focusbrand | safe' name="graph" id="graph"> </iframe>
+    </div>
+  
+    <br>
+   
+    <!-- *ngIf="showtargetvsprogress"  -->
+    <br>
+    <br>
+    <font *ngIf="showCreditGrph" style="     background-color: gray;color: white;font-size: 1.7em;float: left;border-bottom-right-radius: 12px;border-top-right-radius: 12px;">&nbsp;&nbsp;&nbsp;Credit Limit&nbsp;&nbsp;</font>
+    <br>
+    <br>
+    <div *ngIf="showCreditGrph" class="container3">
+      <img class="centered3" *ngIf="!hideTarget" height="150px" src="assets/imgs/morph.gif">
+      <iframe *ngIf="creditLimitGraph != undefined"  (load)="onLoadT()" scrolling="no" frameborder="0" style="width:350px;height:340px; text-align: center"
+        [src]='creditLimitGraph | safe' name="graph" id="graph"> </iframe>
+    </div>
+
+    <br>
+    <br>
+    <font *ngIf="showcustomerEngagementGraph"  style="    background-color: gray;color: white;font-size: 1.7em;float: left;border-bottom-right-radius: 12px;border-top-right-radius: 12px;">&nbsp;&nbsp;&nbsp;Customer Engagement&nbsp;&nbsp;</font>
+    <br>
+    <br>
+    <div *ngIf="showcustomerEngagementGraph" class="container3">
+      <img class="centered3" *ngIf="!hideTarget" height="150px" src="assets/imgs/morph.gif">
+      <iframe  (load)="onLoadT()" scrolling="no" frameborder="0" style="width:350px;height:340px; text-align: center"
+        [src]='customerEngagement | safe' name="graph" id="graph"> </iframe>
+    </div>
+    <br>
+    <br>
+    <font *ngIf="ShowSalesOrderSummary" style="background-color: gray;color: white;font-size: 1.7em;float: left;border-bottom-right-radius: 12px;border-top-right-radius: 12px;">&nbsp;&nbsp;&nbsp;Sales Order Summary &nbsp;&nbsp;  </font>
+    <br>
+    <br>
+    <div *ngIf="ShowSalesOrderSummary"  class="container3">
+      <img class="centered3" *ngIf="!hideTarget" height="150px" src="assets/imgs/morph.gif">
+      <iframe *ngIf="SalesOrderSummary != undefined"  (load)="onLoadT()" scrolling="no" frameborder="0" style="width:350px;height:340px; text-align: center"
+        [src]='SalesOrderSummary | safe' name="graph" id="graph"> </iframe>
+    </div>
+    <br>
+
+    <font *ngIf="ShowSalesReturnSummary" style="background-color: gray;color: white;font-size: 1.7em;float: left;border-bottom-right-radius: 12px;border-top-right-radius: 12px;">&nbsp;&nbsp;&nbsp;Sales Return Summary&nbsp;&nbsp;  </font>
+    <br>
+    <br>
+    <div *ngIf="ShowSalesReturnSummary"  class="container3">
+      <img class="centered3" *ngIf="!hideTarget" height="150px" src="assets/imgs/morph.gif">
+      <iframe *ngIf="SalesReturnSummary != undefined"  (load)="onLoadT()" scrolling="no" frameborder="0" style="width:350px;height:340px; text-align: center"
+        [src]='SalesReturnSummary | safe' name="graph" id="graph"> </iframe>
+    </div>
+    <br>
+  </div>
+
+  <!-- <div text-center><p><b><font style="color:#6bc200">Employe Code : </font><font style="color: #6bc200">{{code}}</font></b></p></div>  -->
+  <div *ngIf="showSaleDiv" style="padding-top: 0px;text-align: center;padding-bottom: 2px">
+        <!-- <img src="assets/imgs/notify4.png"> -->
+        <button ion-button block item-end icon-right (click)="notifyy()" style="padding-top: 25px;padding-bottom: 25px;width: 80%;margin-left: 10%;text-transform: none;">
+          <font style="font-size: 23px">Notification</font>
+            <ion-icon style="font-size:40px;margin-left: 25%" name="md-notifications"></ion-icon>
+            <!-- <ion-badge color="secondary" >{{notifiy}}</ion-badge> -->
+            <ion-spinner  color="secondary" name="circles" *ngIf="showSpineer"></ion-spinner>
+            <ion-badge *ngIf="!showSpineer" color="secondary">{{notifiy}}</ion-badge>
+            
+          </button>
+          <!-- col-6
+          col-6
+          col-6
+          col-6 -->
+    </div>
+<div >
+    <!-- width:calc(100% - 400px);height:400px; -->
+
+    <!-- *ngIf="showSales" -->
+  <ion-grid  *ngIf="showSaleDiv" >
+    <ion-row style="text-align: center" >
+        <!-- *ngIf="showSales" -->
+      <ion-col col-6 text-center *ngIf="showSales" ><img class="circle" (click)="aso_SalesOrder()" src="assets/imgs/skywhtsales.png"></ion-col>
+      <ion-col col-6 text-center *ngIf="custList" ><img class="circle" (click)="customerList()" src="assets/imgs/custList.png"></ion-col>
+    <!-- </ion-row>
+    <ion-row> -->
+      <ion-col col-6 text-center  *ngIf="regCust" ><img class="circle" (click)="regCustomer()" src="assets/imgs/addCust.png"></ion-col>
+      <ion-col col-6 text-center  *ngIf="showScheme" ><img class="circle" (click)="scheme()" src="assets/imgs/skywhtsheme.png"></ion-col>
+    <!-- </ion-row>
+    <ion-row> -->
+        <!-- <ion-col col-6 text-center *ngIf="showCreditLimit" ><img class="circle" (click)="cridt()" src="assets/imgs/credit_limit.png"></ion-col> -->
+        
+      </ion-row>
+  </ion-grid>
+</div>
+
+
+ 
+</ion-content>
+<ion-footer>
+    <ion-toolbar text-center >
+        <ion-icon  name="md-contact" isActive="true" style="color:#0091df; font-size:2.5em; margin-right:20px; position: absolute;right: 85%; top: 35%;"  (click)="profile()"></ion-icon>
+        <div text-center>
+            <button ion-button color="thm" round (click)=" logout()"><ion-icon style="padding-right: 10px" name="md-log-out"></ion-icon>Logout</button>
+          </div>
+        <ion-icon  name="md-information-circle" isActive="true" style="color:#0091df; font-size:2.5em; margin-left:20px; position: absolute;left: 85%; top: 35%;"  (click)="InfoModel()"></ion-icon>
+         <!-- <ion-buttons end ><button style="background: transparent !important;"><ion-icon name="md-notifications" style="font-size: 50px;padding-right: 10px;color: white"  ></ion-icon></button></ion-buttons> -->
+       </ion-toolbar>
+</ion-footer>

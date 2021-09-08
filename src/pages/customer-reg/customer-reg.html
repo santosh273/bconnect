@@ -1,0 +1,605 @@
+<!--
+  Generated template for the CustomerRegPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Dealer Application Form</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg" >
+<ion-row>
+  <ion-col col-12 padding><label style="font-size: 1.0em">Please fill all the below fields to register new customer. Insert 'Nill' OR '0' in non relevant field.</label></ion-col>
+</ion-row>
+<div text-center>
+  <button padding (click)="openInput()" ion-button >{{buttonText}}</button>
+   
+</div>
+<ion-item  class="trns">
+<ion-input *ngIf="showreSubmitField" type="text"  style=" border: 2px solid #0091DF;padding-left: 4px; color: black" placeholder="00001-9282000-3" [brmasker]="{mask:'00001-9282000-3', len:15}"  name="rCNIC" [(ngModel)]="reSubmitCNIC"></ion-input>
+
+</ion-item>
+<div text-center><button small padding round *ngIf="showreSubmitField" (click)="reSubmitMethod(reSubmitCNIC)" ion-button >Search</button></div>
+  <form novalidate>
+   <ion-card class="trns">
+      <ion-card-header style=" margin-bottom: -17px;color: #0091DF;font-size: 2rem;">
+          Zone <font style="color: #eb0802">*</font>
+        </ion-card-header>
+  
+      <ion-item  class="trns">
+          <!-- <ion-label  >Sales Circle <font style="color: #eb0802">*</font></ion-label> -->
+          <!-- <select-searchable  class="search" name="salesCircle"
+          item-content
+          [(ngModel)]="selectedZone"
+          [items]="zones"
+          itemValueField="Idx"
+          itemTextField="ZoneName"
+          [canSearch]="true"
+          (onClose)="onClose($event)"
+          (onChange)="getRegions(selectedZone.Idx)">
+          </select-searchable> -->
+          <ion-select  style=" border: 2px solid #0091DF;padding-left: 4px; color: black;    max-width: 100%;width: 100%;" (ionChange)="getRegions(selectedZone)"  [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedZone"> 
+              <ion-option *ngFor="let z of zones" value="{{z.Idx}}">{{z.ZoneName}}</ion-option>
+          </ion-select>
+      </ion-item>
+  
+  
+      <ion-card-header style=" margin-bottom: -17px;color: #0091DF;font-size: 2rem;">
+        Region <font style="color: #eb0802">*</font>
+      </ion-card-header>
+  
+    <ion-item  class="trns">
+        <!-- <ion-label  >Sales Circle <font style="color: #eb0802">*</font></ion-label> -->
+        <!-- <select-searchable  class="search" name="salesCircle"
+        item-content
+        [(ngModel)]="selectedregion"
+        [items]="regions"
+        itemValueField="Idx"
+        itemTextField="RegionName"
+        [canSearch]="true"
+        (onClose)="onClose($event)"
+        (onChange)="getSalesCircles(selectedregion.Idx)">
+        </select-searchable> -->
+        <ion-select  style=" border: 2px solid #0091DF;padding-left: 4px; color: black;    max-width: 100%;width: 100%;" (ionChange)="getSalesCircles(selectedregion)"   [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedregion"> 
+            <ion-option *ngFor="let r of regions" value="{{r.Idx}}">{{r.RegionName}}</ion-option>
+        </ion-select>
+    </ion-item>
+      <ion-card-header style=" margin-bottom: -17px;color: #0091DF;font-size: 2rem;">
+          Sales Circle <font style="color: #eb0802">*</font>
+        </ion-card-header>
+
+      <ion-item  class="trns">
+          <!-- <ion-label  >Sales Circle <font style="color: #eb0802">*</font></ion-label> -->
+          <!-- <select-searchable  class="search" name="salesCircle"
+          item-content
+          [(ngModel)]="selectedSalesCircle"
+          [items]="salesCircles"
+          itemValueField="Idx"
+          itemTextField="SalesCircleName"
+          [canSearch]="true"
+          (onClose)="onClose($event)"
+          (onChange)="getTerritory(selectedSalesCircle.Idx)">
+          </select-searchable> -->
+          <ion-select  style=" border: 2px solid #0091DF;padding-left: 4px; color: black;    max-width: 100%;width: 100%;" (ionChange)="getTerritory(selectedSalesCircle)"  [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedSalesCircle"> 
+              <ion-option *ngFor="let s of salesCircles" value="{{s.Idx}}">{{s.SalesCircleName}}</ion-option>
+          </ion-select>
+      </ion-item>
+
+     
+  <ion-card-header style=" margin-bottom: -17px;color: #0091DF;font-size: 2rem;">
+    Territory <font style="color: #eb0802">*</font>
+  </ion-card-header>
+
+<ion-item  class="trns">
+  
+    <ion-select  style=" border: 2px solid #0091DF;padding-left: 4px; color: black;    max-width: 100%;width: 100%;" (ionChange)="getPocket(selectedTerritory)"  [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedTerritory"> 
+        <ion-option *ngFor="let z of territory" value="{{z.Idx}}">{{z.TerritoryName}}</ion-option>
+    </ion-select>
+</ion-item>
+<ion-card-header style=" margin-bottom: -17px;color: #0091DF;font-size: 2rem;">
+    Pocket <font style="color: #eb0802">*</font>
+  </ion-card-header>
+
+<ion-item  class="trns">
+    <ion-select  style=" border: 2px solid #0091DF;padding-left: 4px; color: black;    max-width: 100%;width: 100%;"  [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedPocket"> 
+        <ion-option *ngFor="let z of Pocket" value="{{z.Idx}}">{{z.PocketName}}</ion-option>
+    </ion-select>
+    <!-- <ion-label  >Sales Circle <font style="color: #eb0802">*</font></ion-label> -->
+    <!-- <select-searchable  class="search" name="salesCircle"
+    item-content
+    [(ngModel)]="selectedPocket"
+    [items]="Pocket"
+    itemValueField="idx"
+    itemTextField="pocketName"
+    [canSearch]="true"
+    (onClose)="onClose($event)"
+   >
+    </select-searchable> -->
+    <!-- (onChange)="getPocket(selectedTerritory.idx)" -->
+</ion-item>
+
+        <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Shop Name  <font style="color: #eb0802">*</font></ion-label>
+          <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="shopName" [(ngModel)]="shopName"></ion-input>
+        </ion-item>
+
+        <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Name of Proprietor  <font style="color: #eb0802">*</font></ion-label>
+          <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="nameOfProprietor" [(ngModel)]="nameOfProprietor"></ion-input>
+        </ion-item>
+
+        <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Proprietor CNIC  <font style="color: #eb0802">*</font></ion-label>
+          <ion-input type="text"  style=" border: 2px solid #0091DF;padding-left: 4px; color: black" placeholder="00001-9282000-3" [brmasker]="{mask:'00001-9282000-3', len:15}"  name="proprietorCNIC" [(ngModel)]="proprietorCNIC"></ion-input>
+        </ion-item>
+        <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Cell # <font style="color: #eb0802">*</font></ion-label>
+          <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="cell" [(ngModel)]="cell"></ion-input>
+        </ion-item>
+
+        <ion-card-header style=" margin-bottom: -17px;color: #0091DF;font-size: 2rem;">
+          Bank Name <font style="color: #eb0802">*</font>
+        </ion-card-header>
+      
+      <ion-item  class="trns">
+          <ion-select  style=" border: 2px solid #0091DF;padding-left: 4px; color: black;    max-width: 100%;width: 100%;"  [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedBank"> 
+              <ion-option *ngFor="let z of banks" value="{{z.Bankname}}">{{z.Bankname}}</ion-option>
+          </ion-select>
+          <!-- <ion-label  >Sales Circle <font style="color: #eb0802">*</font></ion-label> -->
+          <!-- <select-searchable  class="search" name="salesCircle"
+          item-content
+          [(ngModel)]="selectedBank"
+          [items]="banks"
+          itemValueField="idx"
+          itemTextField="Bankname"
+          [canSearch]="true"
+          (onClose)="onClose($event)"
+          (onChange)="portChange($event)">
+          </select-searchable> -->
+      </ion-item>
+
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Bank A/C Number <font style="color: #eb0802">*</font></ion-label>
+        <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="AccountNo" [(ngModel)]="AccountNo"></ion-input>
+      </ion-item>
+
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Branch Code <font style="color: #eb0802">*</font></ion-label>
+        <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="BranchCode" [(ngModel)]="BranchCode"></ion-input>
+      </ion-item>
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Bank A/C Title <font style="color: #eb0802">*</font></ion-label>
+        <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="AccountTitle" [(ngModel)]="AccountTitle"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Decision Maker Name  <font style="color: #eb0802">*</font></ion-label>
+        <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="DMN" [(ngModel)]="DMN"></ion-input>
+      </ion-item> -->
+
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Business Address <font style="color: #eb0802">*</font></ion-label>
+        <ion-textarea row="2" style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="businessAddress" [(ngModel)]="businessAddress"></ion-textarea>
+      </ion-item>
+
+      <ion-card-header style=" margin-bottom: -17px;color: #0091DF;font-size: 2rem;">
+        City <font style="color: #eb0802">*</font>
+       </ion-card-header>
+     
+     <ion-item  class="trns">
+        <ion-select  style=" border: 2px solid #0091DF;padding-left: 4px; color: black;    max-width: 100%;width: 100%;" (ionChange)="getDistricts(selectedcity)"  [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedcity"> 
+            <ion-option *ngFor="let z of cities" value="{{z.idx}}">{{z.cityName}}</ion-option>
+        </ion-select>
+       
+     </ion-item>
+ 
+
+    <ion-card-header style=" margin-bottom: -17px;color: #0091DF;font-size: 2rem;">
+      District <font style="color: #eb0802">*</font>
+     </ion-card-header>
+   
+   <ion-item  class="trns">
+      <ion-select  style=" border: 2px solid #0091DF;padding-left: 4px; color: black;    max-width: 100%;width: 100%;" (ionChange)="getTehsils(selectedDistrict)"  [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedDistrict"> 
+          <ion-option *ngFor="let z of districts" value="{{z.Idx}}">{{z.DistricName}}</ion-option>
+      </ion-select>
+     
+   </ion-item>
+   <ion-card-header style=" margin-bottom: -17px;color: #0091DF;font-size: 2rem;">
+    Tehsil <font style="color: #eb0802">*</font>
+   </ion-card-header>
+ 
+ <ion-item  class="trns">
+     <ion-select  style=" border: 2px solid #0091DF;padding-left: 4px; color: black;    max-width: 100%;width: 100%;"  [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedTehsil"> 
+         <ion-option *ngFor="let z of teshsils" value="{{z.Idx}}">{{z.TehsilName}}</ion-option>
+     </ion-select>
+  
+ </ion-item>
+ 
+
+ <ion-item   class="trns">
+  <ion-label  style="font-size: 1.8rem" color="primary" stacked>Date of Birth <font style="color: #eb0802">*</font></ion-label>
+  <ion-datetime  displayFormat="YYYY/MM/DD" max="{{dobmax}}"  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="Dob" [(ngModel)]="Dob"></ion-datetime>
+  <!-- <ion-input placeholder="Please double click."   type="date"   style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="Dob" [(ngModel)]="Dob"></ion-input> -->
+</ion-item>
+<ion-item   class="trns">
+  <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Education <font style="color: #eb0802">*</font></ion-label>
+  <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="Education" [(ngModel)]="Education"></ion-input>
+</ion-item>
+
+<ion-card-header text-wrap style=" margin-bottom: -17px;color: black;font-size: 2rem;">
+  Particulars of existing pesticide business operated by Dealer
+  </ion-card-header>
+  <br>
+  <ion-row style="margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+     <ion-col col-7 style="color: #0091DF;font-size: 1.3em">
+         &nbsp;Runs a pesticide business 
+     </ion-col>
+     <ion-col align="right" style="text-align: right" col-5>
+     <p style="padding: 7px" style="text-align: right"> <input type="radio" name="RunPesticidebusiness" value="Yes" [(ngModel)]="RunPesticidebusiness"> Yes <input type="radio" name="RunPesticidebusiness" value="No" [(ngModel)]="RunPesticidebusiness"> No</p>
+     </ion-col>
+   </ion-row>
+   <br>
+   <ion-item   class="trns">
+    <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Duration of Pesticides Business <font style="color: #eb0802">*</font></ion-label>
+    <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="durationPB" [(ngModel)]="durationPB"></ion-input>
+  </ion-item>
+  <br>
+   <ion-row style="height:auto;padding:2px; margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+      <ion-col col-7 style="color: #0091DF;font-size: 1.3em">
+         Siblings / Father operating pesticide business 
+      </ion-col>
+      <ion-col align="right" style="text-align: right" col-5>
+       <p style="text-align: right"> <input type="radio" name="Siblings" value="Yes" [(ngModel)]="Siblings"> Yes <input type="radio" name="Siblings" value="No" [(ngModel)]="Siblings"> No</p>
+      </ion-col>
+    </ion-row>
+    <ion-item   class="trns">
+      <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>NO of Years:<font style="color: #eb0802">*</font></ion-label>
+      <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="NoOfYearsInMarket" [(ngModel)]="NoOfYearsInMarket"></ion-input>
+    </ion-item>
+    <br>
+    <ion-row style="height:auto;padding:2px; margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+       <ion-col col-7 style="color: #0091DF;font-size: 1.3em">
+           Has this person been in black list of BCS 
+       </ion-col>
+       <ion-col align="right" style="text-align: right" col-5>
+       <p style="padding: 4px" style="text-align: right"> <input type="radio" name="BlacklistBCS" value="Yes" [(ngModel)]="BlacklistBCS"> Yes <input type="radio" name="BlacklistBCS" value="No" [(ngModel)]="BlacklistBCS"> No</p>
+       </ion-col>
+     </ion-row>
+     <br>
+    <ion-row style="padding:2px;;padding-bottom: 16px; margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+       <ion-col col-7 style="color: #0091DF;font-size: 1.3em">
+           Has this person been working with BCS with any other name? 
+       </ion-col>
+       <ion-col align="right" style="text-align: right" col-5>
+       <p style="text-align: right"> <input type="radio" name="WorkingwithBCS" value="Yes" [(ngModel)]="WorkingwithBCS"> Yes <input type="radio" name="WorkingwithBCS" value="No" [(ngModel)]="WorkingwithBCS"> No</p>
+       </ion-col>
+     </ion-row>
+     <br>
+     <ion-item   class="trns">
+         <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>If Previously working with Bayer: BCS ID <font style="color: #eb0802">*</font></ion-label>
+         <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="BCSID" [(ngModel)]="BCSID"></ion-input>
+       </ion-item>
+       <!-- <ion-row style="height:auto; margin-left: 16px;margin-right: 8px;"  >
+         <ion-col col-8>
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Owner Name  <font style="color: #eb0802">*</font></ion-label>
+        <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="OwnerName" [(ngModel)]="OwnerName"></ion-input>
+      </ion-col>
+      
+          <ion-col align="right" style="text-align: right" col-4>
+              <p  style="padding-top: 40px;text-align: right"> <input type="radio" name="OwnerOption" value="Yes" [(ngModel)]="OwnerOption"> Yes <input type="radio" name="OwnerOption" value="No" [(ngModel)]="OwnerOption"> No</p>
+              </ion-col>
+     
+      </ion-row> -->
+       <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Category  <font style="color: #eb0802">*</font></ion-label>
+        <ion-select  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedCategory"> 
+            <ion-option *ngFor="let c of Category" value="{{c.idx}}">{{c.categoryName}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Working capital to be invested (Rs.)   <font style="color: #eb0802">*</font></ion-label>
+        <ion-input type="number" style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="WorkingCapital" [(ngModel)]="WorkingCapital"></ion-input>
+      </ion-item>
+
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Business Plan 1st year: <font style="color: #eb0802">*</font></ion-label>
+        <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="businessPlanYear1" [(ngModel)]="businessPlanYear1"></ion-input>
+      </ion-item>
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Business Plan 2nd year: <font style="color: #eb0802">*</font></ion-label>
+        <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="businessPlanYear2" [(ngModel)]="businessPlanYear2"></ion-input>
+      </ion-item>
+     <ion-item  class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Competition Companies  <font style="color: #eb0802">*</font></ion-label>
+     </ion-item>
+      <div style="border-radius: 5px;margin:2px;padding-bottom: 2px;;padding-top: 2px; background-color: rgba(155, 198, 208, 0.374)">
+      <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Company Name 1.<font style="color: #eb0802">*</font></ion-label>
+        <ion-input placeholder="Company Name 1." style=" border: 2px solid #0091DF;padding-left: 4px;margin-bottom: 2px; color: black"  name="cc1" [(ngModel)]="cc1"></ion-input>
+      </ion-item>
+      <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Sales in (MIO.) <font style="color: #eb0802">*</font></ion-label>
+        <ion-input placeholder="Sales in (MIO.)" style=" border: 2px solid #0091DF;padding-left: 4px;margin-bottom: 2px; color: black"  name="C1sale" [(ngModel)]="C1sale"></ion-input>
+      </ion-item>
+      </div>
+      <div style="border-radius: 5px;margin:2px;padding-bottom: 2px;padding-top: 2px; background-color: rgba(155, 198, 208, 0.374)">
+      <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Company Name 2. <font style="color: #eb0802">*</font></ion-label>
+        <ion-input placeholder="Company Name 2." style=" border: 2px solid #0091DF;padding-left: 4px;margin-bottom: 2px; color: black"  name="cc2" [(ngModel)]="cc2"></ion-input>
+      </ion-item>
+      <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Sales in (MIO.)<font style="color: #eb0802">*</font></ion-label>
+        <ion-input placeholder="Sales in (MIO.)" style=" border: 2px solid #0091DF;padding-left: 4px;margin-bottom: 2px; color: black"  name="C2sale" [(ngModel)]="C2sale"></ion-input>
+      </ion-item>
+      </div>
+      <div style="border-radius: 5px;margin:2px;padding-bottom: 2px;;padding-top: 2px; background-color: rgba(155, 198, 208, 0.374)">
+      <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Company Name 3.<font style="color: #eb0802">*</font></ion-label>
+        <ion-input placeholder="Company Name 3."  style=" border: 2px solid #0091DF;padding-left: 4px;margin-bottom: 2px; color: black"  name="cc3" [(ngModel)]="cc3"></ion-input>
+      </ion-item>
+      <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Sales in (MIO.) <font style="color: #eb0802">*</font></ion-label>
+        <ion-input placeholder="Sales in (MIO.)"  style=" border: 2px solid #0091DF;padding-left: 4px;margin-bottom: 2px; color: black"  name="C3sale" [(ngModel)]="C3sale"></ion-input>
+      </ion-item>
+    </div>
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Total Pesticide Business in Previous Year: Mio (Rs.)  <font style="color: #eb0802">*</font></ion-label>
+        <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="TotalPesticidesPreviousYear" [(ngModel)]="TotalPesticidesPreviousYear"></ion-input>
+      </ion-item>
+
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Shop location  <font style="color: #eb0802">*</font></ion-label>
+        <ion-select  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  [ngModelOptions]="{standalone: true}"  [(ngModel)]="SLPesticideMarket"> 
+            <ion-option value="Pesticides Market">Pesticides Market</ion-option>
+            <ion-option value="Grain Market">Grain Market</ion-option>
+            <ion-option value="Adda/Sun Market">Adda/Sun Market</ion-option>
+            <ion-option value="Others">Others</ion-option>
+        </ion-select>
+      </ion-item>
+     
+
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Government license Number  <font style="color: #eb0802">*</font></ion-label>
+        <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="GovLicenseNo" [(ngModel)]="GovLicenseNo"></ion-input>
+      </ion-item>
+      <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Valid up to   <font style="color: #eb0802">*</font></ion-label>
+          <ion-input type="date" style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="ValidupTo" [(ngModel)]="ValidupTo"></ion-input>
+        </ion-item>
+
+        <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Justification/reason for appointing.  <font style="color: #eb0802">*</font></ion-label>
+          <ion-textarea  style=" border: 2px solid #0091DF; color: black"  name="reasonForOpeningAC" rows="3" [(ngModel)]="reasonForOpeningAC"></ion-textarea>
+        </ion-item>
+
+      <div style="border-radius: 5px;margin:2px;padding-bottom: 2px; background-color: rgba(155, 198, 208, 0.374)">
+        <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Distance from closest Bayer Dealer1:(KM) <font style="color: #eb0802">*</font></ion-label>
+          <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="closestBDealerKM" [(ngModel)]="closestBDealerKM"></ion-input>
+        </ion-item>
+        <ion-item   class="trns">
+            <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Dealer Code 1 <font style="color: #eb0802">*</font></ion-label>
+            <ion-input  (ionBlur)="getDealerName1(closestDealerCode)"  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="closestDealerCode" [(ngModel)]="closestDealerCode"></ion-input>
+          </ion-item>
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Dealer Name 1 <font style="color: #eb0802">*</font></ion-label>
+        <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="closestDealerName" [(ngModel)]="closestDealerName"></ion-input>
+      </ion-item>
+
+     
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>LY sales of dealer 1 <font style="color: #eb0802">*</font></ion-label>
+        <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="LYSales" [(ngModel)]="LYSales"></ion-input>
+      </ion-item>
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Sales Plan of dealer 1 <font style="color: #eb0802">*</font></ion-label>
+        <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="salesPlane" [(ngModel)]="salesPlan"></ion-input>
+      </ion-item>
+    </div>
+    <div style="border-radius: 5px;margin:2px;padding-bottom: 2px; background-color: rgba(155, 198, 208, 0.374)">
+      <ion-item   class="trns">
+        <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Distance from closest Bayer Dealer 2:(KM) <font style="color: #eb0802">*</font></ion-label>
+        <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="closestBDealerKM2" [(ngModel)]="closestBDealerKM2"></ion-input>
+      </ion-item>
+      <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Dealer Code 2 <font style="color: #eb0802">*</font></ion-label>
+          <ion-input  (ionBlur)="getDealerName2(closestDealerCode2)"  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="closestDealerCode2" [(ngModel)]="closestDealerCode2"></ion-input>
+        </ion-item>
+
+    <ion-item   class="trns">
+      <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Dealer Name 2 <font style="color: #eb0802">*</font></ion-label>
+      <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="closestDealerName2" [(ngModel)]="closestDealerName2"></ion-input>
+    </ion-item>
+
+   
+    <ion-item   class="trns">
+      <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>LY sales of dealer 2 <font style="color: #eb0802">*</font></ion-label>
+      <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="LYSales2" [(ngModel)]="LYSales2"></ion-input>
+    </ion-item>
+    <ion-item   class="trns">
+      <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Sales Plan of dealer 2 <font style="color: #eb0802">*</font></ion-label>
+      <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="salesPlan2" [(ngModel)]="salesPlan2"></ion-input>
+    </ion-item>
+    </div>
+    <!-- <ion-item   class="trns">
+      <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Negtive Conflict dealer: No <font style="color: #eb0802">*</font></ion-label>
+      <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="negitiveConflictNo" [(ngModel)]="negitiveConflictNo"></ion-input>
+    </ion-item>
+
+    <ion-item   class="trns">
+      <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Negtive Conflict dealer: Yes <font style="color: #eb0802">*</font></ion-label>
+      <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="negitiveConflictYes" [(ngModel)]="negitiveConflictYes"></ion-input>
+    </ion-item> -->
+
+    <ion-item   class="trns">
+      <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>-ve Impact on existing dealer sales(value) <font style="color: #eb0802">*</font></ion-label>
+      <ion-input  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="impactValue" [(ngModel)]="impactValue"></ion-input>
+    </ion-item>
+
+        <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Date <font style="color: #eb0802">*</font></ion-label>
+          <ion-datetime [disabled]='true' displayFormat="YYYY/MM/DD" max="2040-10-31"  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="date" [(ngModel)]="date"></ion-datetime>
+        </ion-item>
+
+        <!-- /////new up -->
+       
+
+        
+        
+       
+
+        <ion-card-header style=" margin-bottom: -17px;color: black;font-size: 2rem;">
+         Attachments
+        </ion-card-header>
+        <br>
+        <ion-row style=" border: 2px solid #0091DF;" >
+          <ion-col style="margin-left: 5px" *ngFor="let a of attachments;let i = index" col-5>
+            <img  style="border-radius: 5px;border-color: #0091DF ;   height: 200px;" [src]='a | safe'>
+            <ion-icon (click)="remove(i);" style="    top: 2px;position: absolute;right: 2px;color: red;font-size: 27px;" name="close-circle"></ion-icon>
+          </ion-col>
+          <!-- <ion-col col-2></ion-col> -->
+        </ion-row>
+        <ion-row>
+          <ion-col col-10></ion-col>
+          <ion-col col-2>
+            <ion-icon (click)="presentActionSheet(1)" style="font-size: 50px;color: #0091DF"  name="add-circle"></ion-icon>
+          </ion-col>
+        </ion-row>
+       
+
+        <ion-card-header style=" margin-bottom: -17px;color: black;font-size: 2rem;">
+         Your Location
+         </ion-card-header>
+         <br> <ion-row style="margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+          <ion-col col-6>
+                  <button ion-button icon-left (click)="location()">
+                    <ion-icon ios="ios-locate" md="md-locate"></ion-icon>Location
+                  </button> 
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button icon-left (click)="map()">
+              <ion-icon ios="ios-map" md="md-map"></ion-icon>Map
+            </button> 
+    </ion-col>
+          
+        </ion-row>
+        <!-- <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Longitude <font style="color: #eb0802">*</font></ion-label>
+          <ion-input disabled="true"  style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="longitude" [(ngModel)]="longitude"></ion-input>
+        </ion-item>
+                
+        <ion-item   class="trns">
+          <ion-label text-wrap style="font-size: 1.8rem" color="primary" stacked>Latitude <font style="color: #eb0802">*</font></ion-label>
+          <ion-input disabled="true" style=" border: 2px solid #0091DF;padding-left: 4px; color: black"  name="latitude" [(ngModel)]="latitude"></ion-input>
+        </ion-item> -->
+                                                                                       
+    </ion-card>
+    <br>   
+      <button *ngIf="checksubmit" ion-button (click)="uploadCustumerInfo()" block>Send Request</button>
+    
+    </form>
+   
+</ion-content>
+ <!-- <button ion-button (click)="letslook()" color="light">Light</button>
+        <ion-row style="margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+          <ion-col col-8>
+            
+                  <button ion-button icon-left (click)="presentActionSheet(2)">
+                    <ion-icon ios="ios-document" md="md-document"></ion-icon>Dealer Agreement
+                  </button>
+                 
+          </ion-col>
+          <ion-col align="right" style="text-align: right" col-4>
+              
+                <img style="padding: 0px;margin: 0px;width: 59px;height: 59px;margin-left: 25px;margin-top: 5px;" (click)=" showImgg(pathForImage(agreementImg))" src="{{pathForImage(agreementImg)}}" [hidden]="agreementImg === undefined" >
+              
+          </ion-col>
+        </ion-row>
+        <br>
+        <ion-row style="margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+          <ion-col col-8>
+                  <button ion-button icon-left (click)="presentActionSheet(3)">
+                    <ion-icon ios="ios-link" md="md-link"></ion-icon>Utility Bill
+                  </button> 
+          </ion-col>
+          <ion-col align="right" style="text-align: right" col-4>
+                <img style="padding: 0px;margin: 0px;width: 59px;height: 59px;margin-left: 25px;margin-top: 5px;" (click)=" showImgg(pathForImage(utilityImg))" src="{{pathForImage(utilityImg)}}" [hidden]="utilityImg === undefined" >
+          </ion-col>
+        </ion-row>
+
+        <br>
+        <ion-row style="margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+          <ion-col col-8>
+                  <button ion-button icon-left (click)="presentActionSheet(4)">
+                    <ion-icon ios="ios-link" md="md-link"></ion-icon>Shop`s Front picture
+                  </button> 
+          </ion-col>
+          <ion-col align="right" style="text-align: right" col-4>
+                <img style="padding: 0px;margin: 0px;width: 59px;height: 59px;margin-left: 25px;margin-top: 5px;" (click)=" showImgg(pathForImage(frontPicture))" src="{{pathForImage(frontPicture)}}" [hidden]="frontPicture === undefined" >
+          </ion-col>
+        </ion-row>
+
+        <br>
+        <ion-row style="margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+          <ion-col col-8>
+                  <button ion-button icon-left (click)="presentActionSheet(5)">
+                    <ion-icon ios="ios-link" md="md-link"></ion-icon>CNIC
+                  </button> 
+          </ion-col>
+          <ion-col align="right" style="text-align: right" col-4>
+                <img style="padding: 0px;margin: 0px;width: 59px;height: 59px;margin-left: 25px;margin-top: 5px;" (click)=" showImgg(pathForImage(CNICImg))" src="{{pathForImage(CNICImg)}}" [hidden]="CNICImg === undefined" >
+          </ion-col>
+        </ion-row>
+
+        <br>
+        <ion-row style="margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+          <ion-col col-8>
+                  <button ion-button icon-left (click)="presentActionSheet(6)">
+                    <ion-icon ios="ios-link" md="md-link"></ion-icon>V P License
+                  </button> 
+          </ion-col>
+          <ion-col align="right" style="text-align: right" col-4>
+                <img style="padding: 0px;margin: 0px;width: 59px;height: 59px;margin-left: 25px;margin-top: 5px;" (click)=" showImgg(pathForImage(vpLicenseImg))" src="{{pathForImage(vpLicenseImg)}}" [hidden]="vpLicenseImg === undefined" >
+          </ion-col>
+        </ion-row>
+
+        <br>
+        <ion-row style="margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+          <ion-col col-8>
+                  <button ion-button icon-left (click)="presentActionSheet(7)">
+                    <ion-icon ios="ios-link" md="md-link"></ion-icon>CPBP
+                  </button> 
+          </ion-col>
+          <ion-col align="right" style="text-align: right" col-4>
+                <img style="padding: 0px;margin: 0px;width: 59px;height: 59px;margin-left: 25px;margin-top: 5px;" (click)=" showImgg(pathForImage(CPBPImg))" src="{{pathForImage(CPBPImg)}}" [hidden]="CPBPImg === undefined" >
+          </ion-col>
+        </ion-row>
+
+        <br>
+        <ion-row style="margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+          <ion-col col-8>
+                  <button ion-button icon-left (click)="presentActionSheet(8)">
+                    <ion-icon ios="ios-link" md="md-link"></ion-icon>Bank A/C Letter
+                  </button> 
+          </ion-col>
+          <ion-col align="right" style="text-align: right" col-4>
+                <img style="padding: 0px;margin: 0px;width: 59px;height: 59px;margin-left: 25px;margin-top: 5px;" (click)=" showImgg(pathForImage(bankLetterImg))" src="{{pathForImage(bankLetterImg)}}" [hidden]="bankLetterImg === undefined" >
+          </ion-col>
+        </ion-row>
+        <br>
+        <ion-row style="margin-left: 16px;margin-right: 8px; border: 2px solid #0091DF;">
+          <ion-col col-8>
+                  <button ion-button icon-left (click)="presentActionSheet(9)">
+                    <ion-icon ios="ios-link" md="md-link"></ion-icon>Registration request
+                  </button> 
+          </ion-col>
+          <ion-col align="right" style="text-align: right" col-4>
+                <img style="padding: 0px;margin: 0px;width: 59px;height: 59px;margin-left: 25px;margin-top: 5px;" (click)=" showImgg(pathForImage(RegistrationImg))" src="{{pathForImage(RegistrationImg)}}" [hidden]="RegistrationImg === undefined" >
+          </ion-col>
+        </ion-row> -->

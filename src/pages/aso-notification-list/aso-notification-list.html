@@ -1,0 +1,48 @@
+<!--
+  Generated template for the AsoNotificationListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Notification</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg">
+    <ion-list>
+        <ion-item class="trns"  style="background-color: #0091df; margin-top: 3px;border-radius: 8px" *ngFor="let post of Notifications; " (click)="viewDetails(post.Idx)">
+            <ion-grid>
+                <ion-row>
+              <ion-col col-9>
+                <ion-row>
+                  <ion-col col-10><font class="txt">Order # : {{post.OrderNo}}</font></ion-col>
+                  <!-- <ion-col col-2><img src="assets/imgs/Bayer.png"></ion-col> -->
+                  <!-- <ion-col col-6><font class="txt">Status:</font> <font style="color: rgb(202, 135, 48)">{{post.status}}</font> </ion-col> -->
+                </ion-row>
+                <ion-row>
+                 
+                  <ion-col col-6><font class="txt">Date: {{post.orderDate}} </font></ion-col>
+                </ion-row>
+              </ion-col>
+              <ion-col col-3 style="color: #66B512" ><ion-row><ion-icon  style="font-size: 25px;padding-left: 7px" ios="ios-eye" md="md-eye"></ion-icon></ion-row>
+              <ion-row>{{post.status}}</ion-row>
+            </ion-col>
+              </ion-row>
+              </ion-grid>
+        </ion-item>
+       
+      </ion-list> 
+      <div *ngIf="nodata" style="text-align: center;color: #10384F">
+          <ion-card>
+            <label style="color: white; font-size: 15px">
+             No records found.
+            </label>
+          </ion-card>
+      </div>
+
+</ion-content>

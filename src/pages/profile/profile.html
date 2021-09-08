@@ -1,0 +1,46 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Update Your Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg">
+    <div text-center>
+        <img style="margin:3px;height:160px;width:160px;border-radius: 50%;border: 2px solid rgb(250, 19, 219);" [src]="profileImg | safe">
+        <ion-icon (click)="presentActionSheet()" class="camera" name="md-camera"></ion-icon>
+    </div>
+    <br>
+    <br>
+    <br>
+    <ion-item no-lines>
+        <ion-label style="font-size: 1.3em;padding-bottom: 8px" color="dark" stacked >Email</ion-label>
+        <ion-input class="inpt" type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+   
+    <ion-item no-lines>
+        <ion-label style="font-size: 1.3em;padding-bottom: 8px" color="dark" stacked >Mailing Address</ion-label>
+        <ion-input class="inpt" type="text" placeholder="Address" [(ngModel)]="address"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label style="font-size: 1.3em;padding-bottom: 8px" color="dark" stacked >Phone Number</ion-label>
+      <ion-input class="inpt" type="text" placeholder="Phone Number" [(ngModel)]="phoneno"></ion-input>
+  </ion-item>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div  text-center>
+        <button class="btn" (click)="updateAll()" ion-button  >Update</button>
+    </div>
+</ion-content>
