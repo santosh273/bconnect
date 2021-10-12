@@ -23,7 +23,7 @@
     "@ionic-native/badge": "^4.7.0",
     "@ionic-native/base64": "^4.20.0",
     "@ionic-native/camera": "^4.20.0",
-    "@ionic-native/core": "4.4.0",
+    "@ionic-native/core": "4.20.0",
     "@ionic-native/diagnostic": "^4.11.0",
     "@ionic-native/file": "^4.20.0",
     "@ionic-native/file-path": "^4.20.0",
